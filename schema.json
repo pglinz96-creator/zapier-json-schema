@@ -1,28 +1,39 @@
 {
-  "type": "object",
-  "properties": {
-    "auftraege": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "produkt": { "type": "string" },
-          "auflage": { "type": "string" },
-          "format": { "type": "string" },
-          "farbigkeit": { "type": "string" },
-          "material": { "type": "string" },
-          "veredelung": { "type": "string" },
-          "liefertermin": { "type": "string" },
-          "besondere_anforderungen": { "type": "string" },
-          "fehlende_angaben": {
-            "type": "array",
-            "items": { "type": "string" }
-          },
-          "rueckfrage": { "type": "string" }
-        },
-        "required": ["produkt"]
-      }
-    }
-  },
-  "required": ["auftraege"]
+"type": "object",
+"properties": {
+"auftraege": {
+"type": "array",
+"items": {
+"type": "object",
+"properties": {
+"produkt": { "type": "string" },
+"auflage": { "type": "string" },
+"format": { "type": "string" },
+"farbigkeit": { "type": "string" },
+"material": { "type": "string" },
+"veredelung": { "type": "string" },
+"liefertermin": { "type": "string" },
+"besondere_anforderungen": { "type": "string" },
+"fehlende_angaben": {
+"type": "array",
+"items": { "type": "string" }
+},
+"rueckfrage": { "type": "string" }
+},
+"required": [
+"produkt",
+"auflage",
+"format",
+"farbigkeit",
+"material",
+"veredelung",
+"liefertermin",
+"besondere_anforderungen",
+"fehlende_angaben",
+"rueckfrage"
+]
+}
+}
+},
+"required": ["auftraege"]
 }
