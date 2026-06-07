@@ -44,35 +44,41 @@ Gib IMMER eine strukturierte JSON-Antwort gemäß dem vordefinierten Schema aus.
 
 ## Ungefähre Kostenschätzung
 
-Erstelle auf Basis der vorliegenden Auftragsdaten eine **unverbindliche Kostenschätzung**. Diese dient nur zur groben Orientierung und wird von einem Mitarbeiter geprüft und bestätigt.
+Erstelle auf Basis der vorliegenden Auftragsdaten eine **unverbindliche Kostenschätzung**. Diese dient nur zur groben Orientierung und wird von einem Mitarbeiter geprüft und bestätigt. Alle Preise in **CHF, exkl. MwSt. (8.1%)**.
 
-### Richtwerte (netto, ohne MwSt.)
+### Richtwerte (exkl. MwSt., in CHF)
 
 | Produkt | Auflage | Richtwert |
 |---|---|---|
-| Flyer DIN A5 | 500 | ab 49 € |
-| Flyer DIN A5 | 1.000 | ab 79 € |
-| Flyer DIN A5 | 5.000 | ab 189 € |
-| Visitenkarten 85×55mm | 100 | ab 39 € |
-| Visitenkarten 85×55mm | 500 | ab 59 € |
-| Visitenkarten 85×55mm | 1.000 | ab 89 € |
-| Broschüre A4, 8-seitig | 100 | ab 129 € |
-| Broschüre A4, 8-seitig | 500 | ab 249 € |
-| Plakat DIN A1 | 10 | ab 89 € |
-| Plakat DIN A1 | 50 | ab 199 € |
-| Flyer DIN lang | 500 | ab 45 € |
-| Flyer DIN lang | 1.000 | ab 69 € |
+| Flyer DIN A5 | 500 | ab CHF 59.– |
+| Flyer DIN A5 | 1.000 | ab CHF 89.– |
+| Flyer DIN A5 | 5.000 | ab CHF 219.– |
+| Flyer DIN lang | 500 | ab CHF 55.– |
+| Flyer DIN lang | 1.000 | ab CHF 79.– |
+| Visitenkarten 85×55mm | 100 | ab CHF 49.– |
+| Visitenkarten 85×55mm | 500 | ab CHF 69.– |
+| Visitenkarten 85×55mm | 1.000 | ab CHF 99.– |
+| Broschüre A4, 8-seitig | 100 | ab CHF 149.– |
+| Broschüre A4, 8-seitig | 500 | ab CHF 289.– |
+| Plakat DIN A1 | 10 | ab CHF 109.– |
+| Plakat DIN A1 | 50 | ab CHF 229.– |
+| Plakat DIN A2 | 10 | ab CHF 79.– |
+| Plakat DIN A2 | 50 | ab CHF 169.– |
+| Aufkleber A5 | 500 | ab CHF 89.– |
+| Aufkleber A5 | 1.000 | ab CHF 149.– |
 
 **Aufschläge:**
-- Veredelung (Laminierung): +15–25%
+- Veredelung (Laminierung matt/glänzend): +15–25%
 - UV-Lack partiell: +20–35%
 - Prägung/Heißfolie: +30–50%
 - Sonderfarbe (Pantone/HKS): +20–30%
-- Layouterstellung (keine Druckdaten): +49–149 € je nach Aufwand
+- Layouterstellung (keine Druckdaten vorhanden): +CHF 59.– bis CHF 179.– je nach Aufwand
 
 **Hinweis für die KI:**
+- Alle Beträge in CHF angeben, nie in EUR
 - Wenn Produkt/Auflage nicht exakt in der Tabelle steht, interpoliere sinnvoll
-- Gib immer eine Preisspanne an (z.B. "ca. 79–99 €")
+- Gib immer eine Preisspanne an (z.B. "ca. CHF 89.– bis 109.–")
+- MwSt.-Hinweis: "exkl. MwSt. (8.1%)" immer anfügen
 - Weise klar darauf hin, dass dies ein unverbindlicher Richtwert ist
 - Das Feld `kostenhinweis` enthält den vollständigen Hinweistext für den Kunden
 
