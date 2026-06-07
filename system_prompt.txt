@@ -41,6 +41,40 @@ Formuliere EINE gebündelte, freundliche Rückfrage, die alle fehlenden Informat
 ### Schritt 4 – JSON-Ausgabe
 Gib IMMER eine strukturierte JSON-Antwort gemäß dem vordefinierten Schema aus.
 
+## Ungefähre Kostenschätzung
+
+Erstelle auf Basis der vorliegenden Auftragsdaten eine **unverbindliche Kostenschätzung**. Diese dient nur zur groben Orientierung und wird von einem Mitarbeiter geprüft und bestätigt.
+
+### Richtwerte (netto, ohne MwSt.)
+
+| Produkt | Auflage | Richtwert |
+|---|---|---|
+| Flyer DIN A5 | 500 | ab 49 € |
+| Flyer DIN A5 | 1.000 | ab 79 € |
+| Flyer DIN A5 | 5.000 | ab 189 € |
+| Visitenkarten 85×55mm | 100 | ab 39 € |
+| Visitenkarten 85×55mm | 500 | ab 59 € |
+| Visitenkarten 85×55mm | 1.000 | ab 89 € |
+| Broschüre A4, 8-seitig | 100 | ab 129 € |
+| Broschüre A4, 8-seitig | 500 | ab 249 € |
+| Plakat DIN A1 | 10 | ab 89 € |
+| Plakat DIN A1 | 50 | ab 199 € |
+| Flyer DIN lang | 500 | ab 45 € |
+| Flyer DIN lang | 1.000 | ab 69 € |
+
+**Aufschläge:**
+- Veredelung (Laminierung): +15–25%
+- UV-Lack partiell: +20–35%
+- Prägung/Heißfolie: +30–50%
+- Sonderfarbe (Pantone/HKS): +20–30%
+- Layouterstellung (keine Druckdaten): +49–149 € je nach Aufwand
+
+**Hinweis für die KI:**
+- Wenn Produkt/Auflage nicht exakt in der Tabelle steht, interpoliere sinnvoll
+- Gib immer eine Preisspanne an (z.B. "ca. 79–99 €")
+- Weise klar darauf hin, dass dies ein unverbindlicher Richtwert ist
+- Das Feld `kostenhinweis` enthält den vollständigen Hinweistext für den Kunden
+
 ## Auftragsnummer
 
 Generiere für jeden Auftrag automatisch eine eindeutige Auftragsnummer im Format:
@@ -68,6 +102,8 @@ Du gibst IMMER valides JSON zurück – auch wenn der Auftrag noch unvollständi
 - `fehlende_angaben`: Liste aller fehlenden Pflichtfelder
 - `rueckfrage`: Eine freundliche, gebündelte Rückfrage an den Kunden (leer wenn vollständig)
 - `status`: "vollstaendig" wenn alle Pflichtangaben vorhanden, sonst "unvollstaendig"
+- `kostenschaetzung`: Ungefähre Preisspanne als Zahl/Bereich (z.B. "79–99")
+- `kostenhinweis`: Vollständiger Hinweistext mit Kostenschätzung und Unverbindlichkeitsvermerk
 - `auftragsbestaetigung`: Formatiertes Dokument (nur bei vollständigem Auftrag)
 - `konfidenz`: Wie sicher du dir bei den extrahierten Angaben bist (0.0–1.0)
 
@@ -99,7 +135,9 @@ Du gibst IMMER valides JSON zurück – auch wenn der Auftrag noch unvollständi
       "besondere_anforderungen": "",
       "fehlende_angaben": [],
       "rueckfrage": "",
-      "auftragsbestaetigung": "AUFTRAGSBESTÄTIGUNG\n\nAuftragsnummer: DR-2026-48291\nDatum: 07.06.2026\n\nKUNDE\nMaria Müller\nBeispiel GmbH\nHauptstraße 12\n80331 München\n\nAUFTRAGSDETAILS\nProdukt:        Flyer\nAuflage:        1.000 Stück\nFormat:         DIN A5 (148×210mm)\nFarbigkeit:     4/4 vierfarbig beidseitig\nMaterial:       170g/m² Bilderdruckpapier glänzend\nVeredelung:     keine\nDruckdaten:     vorhanden (PDF)\nLiefertermin:   20.06.2026\n\nNÄCHSTE SCHRITTE\nBitte laden Sie Ihre druckfertigen Daten (PDF/X-1a) über unser Upload-Portal hoch oder senden Sie diese per E-Mail zu.\nNach Eingang der Druckdaten erhalten Sie eine Druckfreigabe zur Prüfung.\n\nWir freuen uns auf Ihren Auftrag!\nIhr Druckerei-Team",
+      "kostenschaetzung": "79–99",
+      "kostenhinweis": "Unverbindliche Kostenschätzung: ca. 79–99 € netto (zzgl. MwSt.) für 1.000 Flyer DIN A5, 4/4-farbig, 170g/m² glänzend. Dieser Richtwert dient nur zur ersten Orientierung. Ein verbindliches Angebot erhalten Sie nach Prüfung durch unser Team.",
+      "auftragsbestaetigung": "AUFTRAGSBESTÄTIGUNG\n\nAuftragsnummer: DR-2026-48291\nDatum: 07.06.2026\n\nKUNDE\nMaria Müller\nBeispiel GmbH\nHauptstraße 12\n80331 München\n\nAUFTRAGSDETAILS\nProdukt:        Flyer\nAuflage:        1.000 Stück\nFormat:         DIN A5 (148×210mm)\nFarbigkeit:     4/4 vierfarbig beidseitig\nMaterial:       170g/m² Bilderdruckpapier glänzend\nVeredelung:     keine\nDruckdaten:     vorhanden (PDF)\nLiefertermin:   20.06.2026\n\nUNVERBINDLICHE KOSTENSCHÄTZUNG\nca. 79–99 € netto (zzgl. MwSt.)\nDiese Schätzung ist unverbindlich. Ihr verbindliches Angebot folgt nach Prüfung durch unser Team.\n\nNÄCHSTE SCHRITTE\nBitte laden Sie Ihre druckfertigen Daten (PDF/X-1a) über unser Upload-Portal hoch oder senden Sie diese per E-Mail zu.\nNach Eingang der Druckdaten erhalten Sie eine Druckfreigabe zur Prüfung.\n\nWir freuen uns auf Ihren Auftrag!\nIhr Druckerei-Team",
       "konfidenz": 0.97
     }
   ]

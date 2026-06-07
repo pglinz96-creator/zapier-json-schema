@@ -142,6 +142,14 @@
             "maximum": 1,
             "description": "Konfidenz der KI-Extraktion (0.0–1.0)"
           },
+          "kostenschaetzung": {
+            "type": "string",
+            "description": "Ungefähre Preisspanne in EUR netto (z.B. '79–99')"
+          },
+          "kostenhinweis": {
+            "type": "string",
+            "description": "Vollständiger unverbindlicher Kostenhinweis für den Kunden"
+          },
           "auftragsbestaetigung": {
             "type": "string",
             "description": "Formatierter Auftragsbestätigungstext (nur bei vollständigem Auftrag)"
