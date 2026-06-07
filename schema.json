@@ -8,9 +8,9 @@
       "items": {
         "type": "object",
         "properties": {
-          "auftrag_id": {
+          "auftrag_nr": {
             "type": "string",
-            "description": "Eindeutige ID, automatisch generiert (z.B. DR-2026-0001)"
+            "description": "Automatisch generierte Auftragsnummer (Format: DR-YYYY-NNNNN)"
           },
           "status": {
             "type": "string",
@@ -21,9 +21,12 @@
             "type": "object",
             "properties": {
               "name": { "type": "string" },
+              "firma": { "type": "string" },
+              "strasse": { "type": "string" },
+              "plz": { "type": "string" },
+              "ort": { "type": "string" },
               "email": { "type": "string", "format": "email" },
-              "telefon": { "type": "string" },
-              "firma": { "type": "string" }
+              "telefon": { "type": "string" }
             }
           },
           "produkt": {
@@ -138,6 +141,10 @@
             "minimum": 0,
             "maximum": 1,
             "description": "Konfidenz der KI-Extraktion (0.0–1.0)"
+          },
+          "auftragsbestaetigung": {
+            "type": "string",
+            "description": "Formatierter Auftragsbestätigungstext (nur bei vollständigem Auftrag)"
           },
           "ursprungstext": {
             "type": "string",
