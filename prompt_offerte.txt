@@ -22,69 +22,87 @@ Kostenschätzung: {{kostenschaetzung}} CHF
 Terminbewertung: {{terminbewertung}}
 Terminhinweis: {{terminhinweis}}
 
-Erstelle ein Angebotsdokument mit folgenden Pflichtbestandteilen:
+LAYOUT-VORGABEN (zwingend einhalten):
+- KEINE Trennlinien, KEINE Tabellen, KEINE Rahmen, KEINE Striche
+- Absender-Block (Schellenberg Druck AG): linksbündig oben
+- Empfänger-Block (Kunde): rechtsbündig, mit Leerzeilen Abstand zum Absender
+- Angebotsnummer / Datum / Gültig bis: linksbündig, nach dem Empfänger
+- Fliesstext: linksbündig, gut strukturiert mit Leerzeilen zwischen Abschnitten
+- Abschnittstitel (1. LEISTUNGSBESCHREIBUNG etc.): linksbündig, GROSSBUCHSTABEN
+- Beträge: linksbündig aufgelistet, klar getrennt
+- Unterschriftsblock: linksbündig am Ende
 
-1. BRIEFKOPF
-   Firmenname:    Schellenberg Druck AG
-   Strasse:       Schützenhausstrasse 5
-   PLZ/Ort:       8330 Pfäffikon
-   Telefon:       044 953 11 11
-   E-Mail:        info@schellenbergdruck.ch
-   Website:       https://schellenbergdruck.ch
-   MwSt-Nr.:      CHE-102.642.552 MWST
+Erstelle das Angebotsdokument mit folgenden Pflichtbestandteilen:
+
+1. BRIEFKOPF (linksbündig)
+   Schellenberg Druck AG
+   Schützenhausstrasse 5
+   8330 Pfäffikon
+   Telefon: 044 953 11 11
+   E-Mail: info@schellenbergdruck.ch
+   Website: https://schellenbergdruck.ch
+   MwSt-Nr.: CHE-102.642.552 MWST
+
+2. EMPFÄNGER (rechtsbündig, 2–3 Leerzeilen Abstand zum Briefkopf)
+   Vollständige Kundenadresse (Name, ggf. Firma, Strasse, PLZ Ort)
+
+3. ANGEBOTSDETAILS (linksbündig)
    Angebotsnummer: {{auftrag_nr}}
    Datum: aktuelles Datum
    Gültig bis: aktuelles Datum + 30 Tage
 
-2. EMPFÄNGER
-   - Vollständige Kundenadresse
+4. BETREFF
+   "Angebot Nr. {{auftrag_nr}} – [Produktbezeichnung]"
 
-3. BETREFF
-   - "Angebot Nr. {{auftrag_nr}} – [Produktbezeichnung]"
+5. ANREDEFORMEL
+   Formell mit Namen falls bekannt: "Sehr geehrter Herr [Name]" / "Sehr geehrte Frau [Name]"
+   Sonst: "Sehr geehrte Damen und Herren"
 
-4. ANREDEFORMEL
-   - Formell: "Sehr geehrte Damen und Herren," oder mit Namen falls bekannt
+6. EINLEITUNG
+   Kurzer Dank für die Anfrage, Vorfreude auf Zusammenarbeit
 
-5. EINLEITUNG
-   - Bezug auf die Anfrage, Dank für das Interesse
-
-6. LEISTUNGSBESCHREIBUNG (pro Produkt gegliedert)
+7. 1. LEISTUNGSBESCHREIBUNG (pro Produkt als eigene Position)
    Für jedes Produkt:
-   - Produkt und Bezeichnung
-   - Technische Spezifikationen (Format, Farbigkeit, Material, Veredelung, Auflage)
-   - Druckdaten-Status
-   - Liefertermin
-   - Einzelpreis und Gesamtpreis in CHF exkl. MwSt.
-   - MwSt. 8.1% separat ausgewiesen
-   - Gesamtbetrag inkl. MwSt.
+   - Position X: [Produktname]
+   - Produkt, Format, Farbigkeit, Material, Veredelung, Auflage, Druckdaten, Liefertermin
+   - Nettobetrag exkl. MwSt.: CHF X.XX
+   - MwSt. 8.1%: CHF X.XX
+   - Gesamtbetrag inkl. MwSt.: CHF X.XX
 
-7. LIEFERBEDINGUNGEN
-   - Liefertermin: {{liefertermin}}
-   - Terminhinweis falls terminbewertung = "knapp" oder "nicht_realistisch"
-   - Lieferung: ab Druckerei oder Versand (Versandkosten separat)
+8. 2. LIEFERBEDINGUNGEN
+   Liefertermin, Versandhinweis
+   Terminhinweis falls terminbewertung = "knapp" oder "nicht_realistisch" – einmalig, freundlich
 
-8. ZAHLUNGSBEDINGUNGEN
-   - 30 Tage netto nach Rechnungsstellung
-   - Bei Erstauftrag: 50% Anzahlung vor Druckbeginn
+9. 3. ZAHLUNGSBEDINGUNGEN
+   30 Tage netto, bei Erstauftrag 50% Anzahlung
 
-9. DRUCKDATEN
-   - Falls vorhanden: Hinweis auf Druckdaten-Prüfung und Freigabeprozess
-   - Falls nicht vorhanden: Layoutservice-Kosten und Zeitplan
+10. 4. DRUCKDATEN
+    Vorhanden: Preflight-Prüfung, Freigabeprozess
+    Nicht vorhanden: Layoutservice, Zeitplan, Mehrkosten
 
-10. RECHTLICHE HINWEISE
-    - "Dieses Angebot ist unverbindlich und freibleibend bis zum genannten Ablaufdatum."
-    - "Preisänderungen vorbehalten."
-    - "Es gelten unsere Allgemeinen Geschäftsbedingungen."
-    - "Gerichtsstand: Pfäffikon ZH"
+11. 5. RECHTLICHE HINWEISE
+    - Angebot unverbindlich und freibleibend bis Ablaufdatum
+    - Preisänderungen vorbehalten
+    - Es gelten unsere AGB, einsehbar auf https://schellenbergdruck.ch
+    - Gerichtsstand: Pfäffikon ZH
 
-11. ABSCHLUSS
-    - Freundliche Schlussformulierung
-    - Unterschriftsblock: "Mit freundlichen Grüssen, Edgar Glinz, Schellenberg Druck AG"
+12. ABSCHLUSS
+    Dank für Vertrauen, Kontaktangaben für Rückfragen
+
+13. UNTERSCHRIFT (linksbündig)
+    Freundliche Grüsse
+
+    Edgar Glinz
+    Schellenberg Druck AG
+    Schützenhausstrasse 5
+    8330 Pfäffikon
+    Telefon: 044 953 11 11
+    E-Mail: info@schellenbergdruck.ch
 
 WICHTIG:
 - Alle Beträge in CHF, MwSt. 8.1% immer separat ausweisen
-- Professioneller, formeller Schweizer Geschäftsstil
-- Keine umgangssprachlichen Ausdrücke
-- Klare Struktur, gut lesbar
-- Das Dokument muss so formuliert sein, dass es direkt als Angebot an den Kunden verschickt werden kann
+- Professioneller, formeller Schweizer Geschäftsstil, kein Umgangssprachliches
+- KEINE Linien, KEINE Tabellen, KEINE Trennstriche
+- Empfänger-Adresse immer rechtsbündig formatiert (mit Leerzeichen einrücken)
 - Antworte NUR mit dem fertigen Dokumenttext, ohne Erklärungen davor oder danach
+
