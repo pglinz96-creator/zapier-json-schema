@@ -1,0 +1,88 @@
+{
+  "workflow_name": "Druckerei Auftragsannahme – KI-Agent",
+  "description": "Automatische Auftragsannahme via Claude KI. Eingehende Kundenanfragen werden analysiert, strukturiert erfasst und bei unvollständigen Angaben automatisch per E-Mail nachgefragt.",
+  "trigger": {
+    "app": "Email by Zapier",
+    "event": "New Inbound Email",
+    "note": "Oder alternativ: Gmail / Outlook / Typeform / Webformular"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "app": "Anthropic Claude",
+      "event": "Send Message",
+      "config": {
+        "model": "claude-opus-4-8",
+        "system_prompt_file": "system_prompt.txt",
+        "user_message": "{{trigger.body_plain}}",
+        "max_tokens": 2048,
+        "output_format": "JSON"
+      }
+    },
+    {
+      "step": 2,
+      "app": "Zapier Formatter",
+      "event": "Text – Extract JSON",
+      "config": {
+        "input": "{{step1.output}}",
+        "json_path": "auftraege[0]"
+      }
+    },
+    {
+      "step": 3,
+      "app": "Filter by Zapier",
+      "event": "Only continue if...",
+      "config": {
+        "condition": "{{step2.status}} equals unvollstaendig"
+      },
+      "note": "Nur bei unvollständigen Aufträgen Rückfrage senden"
+    },
+    {
+      "step": 4,
+      "app": "Email by Zapier",
+      "event": "Send Outbound Email",
+      "config": {
+        "to": "{{trigger.reply_to}}",
+        "subject": "Rückfrage zu Ihrer Druckanfrage",
+        "body": "{{step2.rueckfrage}}",
+        "note": "Automatische Rückfrage bei fehlenden Angaben"
+      }
+    },
+    {
+      "step": 5,
+      "app": "Google Sheets / Airtable / CRM",
+      "event": "Create Row / Record",
+      "config": {
+        "auftrag_id": "{{step2.auftrag_id}}",
+        "status": "{{step2.status}}",
+        "produkt": "{{step2.produkt}}",
+        "auflage": "{{step2.auflage}}",
+        "format": "{{step2.format}}",
+        "farbigkeit": "{{step2.farbigkeit}}",
+        "material": "{{step2.material}}",
+        "veredelung": "{{step2.veredelung}}",
+        "liefertermin": "{{step2.liefertermin}}",
+        "fehlende_angaben": "{{step2.fehlende_angaben}}",
+        "kunde_email": "{{trigger.reply_to}}",
+        "eingang": "{{trigger.date}}"
+      }
+    }
+  ],
+  "alternative_triggers": [
+    {
+      "name": "Webformular",
+      "app": "Typeform / Jotform / Cognito Forms",
+      "note": "Für strukturiertere Eingaben – weniger KI-Extraktion nötig"
+    },
+    {
+      "name": "WhatsApp / Telegram",
+      "app": "Twilio / Telegram Bot",
+      "note": "Für Messaging-basierte Auftragsannahme – Konversation möglich"
+    },
+    {
+      "name": "Live-Chat",
+      "app": "Intercom / Tidio / Crisp",
+      "note": "Für Echtzeit-Chat mit KI-Unterstützung"
+    }
+  ]
+}

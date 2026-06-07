@@ -1,0 +1,33 @@
+{
+  "auftraege": [
+    {
+      "auftrag_id": "DR-2026-0043",
+      "status": "unvollstaendig",
+      "kunde": {
+        "name": "Thomas Schneider",
+        "email": "t.schneider@web.de",
+        "firma": null
+      },
+      "produkt": "Visitenkarten",
+      "auflage": "500",
+      "format": null,
+      "farbigkeit": "4/1 (vierfarbig/schwarz)",
+      "material": null,
+      "veredelung": null,
+      "weiterverarbeitung": "keine",
+      "liefertermin": null,
+      "druckdaten_vorhanden": false,
+      "druckdaten_format": "noch zu erstellen",
+      "besondere_anforderungen": "Logo liegt als JPEG vor",
+      "fehlende_angaben": [
+        "format",
+        "material",
+        "veredelung",
+        "liefertermin"
+      ],
+      "rueckfrage": "Vielen Dank für Ihre Anfrage, Herr Schneider! Für Ihre 500 Visitenkarten (4/1-farbig) benötigen wir noch folgende Angaben:\n\n1. **Format**: Möchten Sie das Standardformat 85×55mm, oder ein anderes Format?\n2. **Material**: Empfehlung für Visitenkarten: 350g/m² Chromokarton matt oder glänzend – oder bevorzugen Sie etwas anderes?\n3. **Veredelung**: Soll eine Oberfläche veredelt werden? (z.B. Softtouch-Laminierung, UV-Lack, Prägung – oder keine Veredelung)\n4. **Liefertermin**: Wann benötigen Sie die Visitenkarten spätestens?\n\nHinweis: Da noch kein Layout vorhanden ist und das Logo nur als JPEG vorliegt, empfehlen wir unseren Layoutservice. Bitte beachten Sie, dass hierfür ca. 2–3 Werktage zusätzlich eingeplant werden sollten. Wir setzen uns mit Ihnen für die Gestaltung in Verbindung.\n\nSobald wir alle Angaben haben, senden wir Ihnen ein verbindliches Angebot zu.",
+      "konfidenz": 0.78,
+      "ursprungstext": "Hallo, ich möchte Visitenkarten bestellen, 500 Stück, vorne farbig, hinten schwarz. Habe noch kein Layout, nur mein Logo als JPG. Meine Email: t.schneider@web.de"
+    }
+  ]
+}

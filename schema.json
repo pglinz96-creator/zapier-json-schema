@@ -1,39 +1,157 @@
 {
-"type": "object",
-"properties": {
-"auftraege": {
-"type": "array",
-"items": {
-"type": "object",
-"properties": {
-"produkt": { "type": "string" },
-"auflage": { "type": "string" },
-"format": { "type": "string" },
-"farbigkeit": { "type": "string" },
-"material": { "type": "string" },
-"veredelung": { "type": "string" },
-"liefertermin": { "type": "string" },
-"besondere_anforderungen": { "type": "string" },
-"fehlende_angaben": {
-"type": "array",
-"items": { "type": "string" }
-},
-"rueckfrage": { "type": "string" }
-},
-"required": [
-"produkt",
-"auflage",
-"format",
-"farbigkeit",
-"material",
-"veredelung",
-"liefertermin",
-"besondere_anforderungen",
-"fehlende_angaben",
-"rueckfrage"
-]
-}
-}
-},
-"required": ["auftraege"]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Schema für Druckerei-Auftragsannahme via KI-Agent",
+  "properties": {
+    "auftraege": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "auftrag_id": {
+            "type": "string",
+            "description": "Eindeutige ID, automatisch generiert (z.B. DR-2026-0001)"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["vollstaendig", "unvollstaendig", "rueckfrage_ausstehend"],
+            "description": "Vollständigkeitsstatus des Auftrags"
+          },
+          "kunde": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "email": { "type": "string", "format": "email" },
+              "telefon": { "type": "string" },
+              "firma": { "type": "string" }
+            }
+          },
+          "produkt": {
+            "type": "string",
+            "description": "Art des Druckprodukts",
+            "examples": [
+              "Visitenkarten", "Flyer", "Broschüre", "Plakat", "Banner",
+              "Briefpapier", "Umschläge", "Aufkleber", "Katalog", "Folder",
+              "Postkarten", "Einladungen", "Kalender", "Roll-Up", "Notizblöcke"
+            ]
+          },
+          "auflage": {
+            "type": "string",
+            "description": "Druckauflage (Stückzahl)",
+            "examples": ["100", "250", "500", "1000", "2500", "5000", "10000"]
+          },
+          "format": {
+            "type": "string",
+            "description": "Druckformat",
+            "examples": [
+              "DIN A6 (105×148mm)", "DIN A5 (148×210mm)", "DIN A4 (210×297mm)",
+              "DIN A3 (297×420mm)", "DIN lang (99×210mm)", "85×55mm (Visitenkarte)",
+              "individuell"
+            ]
+          },
+          "farbigkeit": {
+            "type": "string",
+            "description": "Farbigkeit des Drucks",
+            "enum": [
+              "4/4 (vierfarbig beidseitig)",
+              "4/0 (vierfarbig einseitig)",
+              "4/1 (vierfarbig/schwarz)",
+              "1/1 (einfarbig beidseitig)",
+              "1/0 (einfarbig einseitig)",
+              "2/2 (zweifarbig beidseitig)",
+              "2/0 (zweifarbig einseitig)",
+              "HKS/Pantone Sonderfarbe",
+              "Schwarz-Weiß"
+            ]
+          },
+          "material": {
+            "type": "string",
+            "description": "Papier/Material und Grammatur",
+            "examples": [
+              "135g/m² Bilderdruckpapier matt",
+              "170g/m² Bilderdruckpapier glänzend",
+              "250g/m² Chromokarton matt",
+              "300g/m² Chromokarton glänzend",
+              "90g/m² Offset",
+              "350g/m² Bilderdruck",
+              "Recyclingpapier 100g/m²",
+              "selbstklebende Folie"
+            ]
+          },
+          "veredelung": {
+            "type": "string",
+            "description": "Oberflächenveredelung",
+            "examples": [
+              "keine",
+              "Cellophanierung matt",
+              "Cellophanierung glänzend",
+              "Softtouch-Laminierung",
+              "UV-Lack partiell",
+              "UV-Lack vollflächig",
+              "Prägung (Heißfolie)",
+              "Blindprägung",
+              "Stanzung",
+              "Perforierung"
+            ]
+          },
+          "weiterverarbeitung": {
+            "type": "string",
+            "description": "Falzung, Bindung, Schnitt etc.",
+            "examples": [
+              "keine",
+              "Falzung (Wickelfalz/Zickzackfalz/Parallelfalz)",
+              "Klammerheftung",
+              "Klebebindung",
+              "Spiralbindung",
+              "Rillierung",
+              "Bohren"
+            ]
+          },
+          "liefertermin": {
+            "type": "string",
+            "description": "Gewünschtes Lieferdatum (ISO 8601 oder Freitextangabe)"
+          },
+          "druckdaten_vorhanden": {
+            "type": "boolean",
+            "description": "Ob druckfertige Daten vom Kunden bereitgestellt werden"
+          },
+          "druckdaten_format": {
+            "type": "string",
+            "description": "Format der Druckdaten",
+            "examples": ["PDF/X-1a", "PDF/X-4", "InDesign", "Illustrator", "noch zu erstellen"]
+          },
+          "besondere_anforderungen": {
+            "type": "string",
+            "description": "Sonstige Anforderungen, Anmerkungen oder Sonderwünsche"
+          },
+          "fehlende_angaben": {
+            "type": "array",
+            "description": "Liste der Felder, die noch fehlen oder unklar sind",
+            "items": { "type": "string" }
+          },
+          "rueckfrage": {
+            "type": "string",
+            "description": "Konkrete Rückfrage an den Kunden zur Vervollständigung des Auftrags"
+          },
+          "konfidenz": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Konfidenz der KI-Extraktion (0.0–1.0)"
+          },
+          "ursprungstext": {
+            "type": "string",
+            "description": "Originalnachricht des Kunden"
+          }
+        },
+        "required": [
+          "status",
+          "produkt",
+          "fehlende_angaben",
+          "rueckfrage"
+        ]
+      }
+    }
+  },
+  "required": ["auftraege"]
 }
