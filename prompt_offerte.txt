@@ -18,9 +18,14 @@ Material: {{material}}
 Veredelung: {{veredelung}}
 Liefertermin: {{liefertermin}}
 Druckdaten vorhanden: {{druckdaten_vorhanden}}
-Kostenschätzung: {{kostenschaetzung}} CHF
 Terminbewertung: {{terminbewertung}}
 Terminhinweis: {{terminhinweis}}
+
+Kalkulierte Preise (aus Kalkulations-KI):
+Verkaufspreis netto (exkl. MwSt.): CHF {{verkaufspreis_netto}}
+MwSt. 8.1%: CHF {{mwst_betrag}}
+Verkaufspreis brutto (inkl. MwSt.): CHF {{verkaufspreis_brutto}}
+Preis pro Stück: CHF {{preis_pro_stueck_netto}} exkl. MwSt.
 
 LAYOUT-VORGABEN (zwingend einhalten):
 - KEINE Trennlinien, KEINE Tabellen, KEINE Rahmen, KEINE Striche

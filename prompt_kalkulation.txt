@@ -1,0 +1,100 @@
+Du bist ein erfahrener Kalkulator einer Schweizer Druckerei. Erstelle auf Basis der folgenden Auftragsdaten eine detaillierte Preiskalkulation – intern für den Betrieb sowie einen Verkaufspreis für den Kunden.
+
+Auftragsdaten:
+Auftragsnummer: {{auftrag_nr}}
+Produkt: {{produkt}}
+Auflage: {{auflage}}
+Format: {{format}}
+Farbigkeit: {{farbigkeit}}
+Material: {{material}}
+Veredelung: {{veredelung}}
+Druckdaten vorhanden: {{druckdaten_vorhanden}}
+Liefertermin: {{liefertermin}}
+Terminbewertung: {{terminbewertung}}
+
+KALKULATIONSGRUNDLAGEN (Schweizer Druckmarkt, exkl. MwSt.):
+
+Papierkosten (Richtwerte pro 1.000 Bogen):
+- 90g/m² Offset: CHF 18.–
+- 115g/m² Bilderdruckpapier matt: CHF 24.–
+- 135g/m² Bilderdruckpapier matt/glänzend: CHF 32.–
+- 170g/m² Bilderdruckpapier glänzend: CHF 41.–
+- 250g/m² Chromokarton matt: CHF 58.–
+- 300g/m² Chromokarton glänzend: CHF 68.–
+- 350g/m² Bilderdruck: CHF 79.–
+- Recyclingpapier 100g/m²: CHF 21.–
+- Selbstklebende Folie: CHF 95.–
+
+Druckkosten (Offsetdruck, pro Auflage):
+- Rüstkosten (einmalig pro Druckjob): CHF 55.–
+- Druckkosten 4/0 bis 1.000 Bogen: CHF 0.045 pro Bogen
+- Druckkosten 4/0 ab 1.000 Bogen: CHF 0.032 pro Bogen
+- Druckkosten 4/4 (beidseitig): × 1.7
+- Druckkosten Sonderfarbe (Pantone/HKS): +CHF 38.– pro Farbe
+
+Veredelungskosten:
+- Cellophanierung matt oder glänzend (einseitig): CHF 0.06 pro Bogen
+- Cellophanierung beidseitig: CHF 0.10 pro Bogen
+- Softtouch-Laminierung: CHF 0.09 pro Bogen
+- UV-Lack vollflächig: CHF 0.07 pro Bogen
+- UV-Lack partiell: CHF 0.12 pro Bogen
+- Heissfolienprägung: CHF 0.18 pro Bogen
+- Blindprägung: CHF 0.14 pro Bogen
+- Stanzung (Standardform): CHF 0.08 pro Bogen + CHF 180.– Stanzeisen
+
+Weiterverarbeitung:
+- Falzung: CHF 0.03 pro Bogen
+- Klammerheftung: CHF 0.05 pro Exemplar
+- Klebebindung: CHF 0.90 pro Exemplar
+- Spiralbindung: CHF 1.20 pro Exemplar
+
+Layoutkosten (wenn keine Druckdaten vorhanden):
+- Einfaches Layout (Visitenkarte, Flyer): CHF 90.–
+- Mittleres Layout (Broschüre, Katalog): CHF 180.–
+- Aufwändiges Layout (mehrseitig, komplex): CHF 320.–
+
+Lieferzuschlag:
+- Terminbewertung "knapp": +15% auf Gesamtproduktion
+- Terminbewertung "nicht_realistisch": +25% auf Gesamtproduktion (Express)
+
+KALKULATION DURCHFÜHREN:
+
+1. Berechne den Materialbedarf: Auflage + 10% Makulatur (Mindeststückzahl 50 Bogen)
+2. Berechne Papierkosten auf Basis Format und Grammatur
+3. Berechne Druckkosten (Rüstkosten + laufende Kosten)
+4. Berechne Veredelungskosten falls zutreffend
+5. Berechne Layoutkosten falls keine Druckdaten vorhanden
+6. Addiere alle Kosten = Selbstkosten
+7. Berechne Verkaufspreis mit Marge 42% (Standardmarge)
+8. Runde auf CHF 5.– auf (kaufmännisch attraktiv)
+9. Prüfe ob Optimierungsmöglichkeiten bestehen
+
+OPTIMIERUNGSHINWEISE prüfen:
+- Lässt sich durch Formatanpassung (z.B. 2-up) Papier sparen?
+- Wäre eine höhere Auflage deutlich günstiger pro Stück?
+- Kann auf Veredelung verzichtet werden ohne Qualitätsverlust?
+- Ist ein günstigeres Material mit ähnlicher Wirkung verfügbar?
+
+AUSGABE – NUR VALIDES JSON, kein Erklärungstext davor oder danach:
+
+{
+  "auftrag_nr": "...",
+  "selbstkosten_chf": 0.00,
+  "kostenaufstellung": {
+    "papier": 0.00,
+    "druck": 0.00,
+    "veredelung": 0.00,
+    "layout": 0.00,
+    "expresszuschlag": 0.00
+  },
+  "marge_prozent": 42,
+  "verkaufspreis_netto": 0.00,
+  "mwst_betrag": 0.00,
+  "verkaufspreis_brutto": 0.00,
+  "preis_pro_stueck_netto": 0.00,
+  "optimierungshinweise": [
+    "Hinweis 1",
+    "Hinweis 2"
+  ],
+  "kalkulation_kommentar": "Kurze interne Bemerkung zur Kalkulation (1–2 Sätze)"
+}
