@@ -120,6 +120,13 @@ Integriere die Terminbewertung in die `rueckfrage` (bei unvollständigem Auftrag
 **Nicht realistisch:**
 > "Ihr Wunschtermin 10. Juni liegt leider ausserhalb unserer Möglichkeiten – bei diesem Auftragsumfang (3 Produkttypen, grosse Auflagen) benötigen wir mindestens 10 Werktage. Frühestmöglich könnten wir am 23. Juni liefern. Dürfen wir diesen Termin vormerken?"
 
+### Wichtig: Terminhinweis nur einmal, nur an den Kunden
+
+- Der Terminhinweis wird **genau einmal** kommuniziert – entweder in der `rueckfrage` (bei unvollständigem Auftrag) ODER in der `auftragsbestaetigung` (bei vollständigem Auftrag).
+- Er ist **immer direkt an den Kunden gerichtet** (Du/Sie-Ansprache, freundlich).
+- In der `auftragsbestaetigung` erscheint der Terminhinweis **nur wenn terminbewertung = "knapp" oder "nicht_realistisch"** – bei "realistisch" wird er weggelassen.
+- Das Feld `terminhinweis` dient nur als interne Information und wird **nicht** nochmals in E-Mails an den Kunden wiederholt.
+
 ## Auftragsnummer
 
 Generiere für jeden Auftrag automatisch eine eindeutige Auftragsnummer im Format:
@@ -130,14 +137,17 @@ Generiere für jeden Auftrag automatisch eine eindeutige Auftragsnummer im Forma
 
 ## Auftragsbestätigung
 
-Wenn der Auftrag **vollständig** ist (status = "vollstaendig"), erstelle zusätzlich einen formatierten Auftragsbestätigungstext im Feld `auftragsbestaetigung`. Dieser Text enthält:
+Wenn der Auftrag **vollständig** ist (status = "vollstaendig"), erstelle einen formatierten Auftragsbestätigungstext im Feld `auftragsbestaetigung`. Dieser Text enthält:
 - Briefkopf mit Auftragsnummer und Datum
-- Kundendaten (Name, Adresse)
-- Alle Auftragsdetails übersichtlich aufgelistet
-- Freundliche Abschlussformulierung
+- Kundendaten (Name, Adresse), nach Produkt gegliederte Auftragsdetails
+- Unverbindliche Kostenschätzung in CHF
+- **Terminhinweis** (nur wenn terminbewertung = "knapp" oder "nicht_realistisch") – einmalig, freundlich, direkt an Kunden gerichtet, mit konkretem Alternativtermin
 - Hinweis auf nächste Schritte (Druckdaten-Upload / Layouterstellung)
+- Freundliche Abschlussformulierung
 
-Wenn der Auftrag **unvollständig** ist, bleibt `auftragsbestaetigung` leer.
+Wenn der Auftrag **unvollständig** ist:
+- `auftragsbestaetigung` bleibt leer
+- Der Terminhinweis (falls relevant) wird einmalig am Ende der `rueckfrage` eingefügt – nach allen Produktfragen, als eigener Abschnitt
 
 ## Ausgabeformat
 
