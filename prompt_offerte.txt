@@ -25,12 +25,23 @@ Terminhinweis: {{terminhinweis}}
 LAYOUT-VORGABEN (zwingend einhalten):
 - KEINE Trennlinien, KEINE Tabellen, KEINE Rahmen, KEINE Striche
 - Absender-Block (Schellenberg Druck AG): linksbündig oben
-- Empfänger-Block (Kunde): rechtsbündig, mit Leerzeilen Abstand zum Absender
-- Angebotsnummer / Datum / Gültig bis: linksbündig, nach dem Empfänger
-- Fliesstext: linksbündig, gut strukturiert mit Leerzeilen zwischen Abschnitten
+- Empfänger-Block (Kunde): rechtsbündig, mit EINER Leerzeile Abstand zum Absender
+- Angebotsnummer / Datum / Gültig bis: linksbündig, direkt nach dem Empfänger
+- Fliesstext: linksbündig, NUR EINE Leerzeile zwischen Abschnitten
 - Abschnittstitel (1. LEISTUNGSBESCHREIBUNG etc.): linksbündig, GROSSBUCHSTABEN
 - Beträge: linksbündig aufgelistet, klar getrennt
-- Unterschriftsblock: linksbündig am Ende
+- Unterschriftsblock: linksbündig am Ende, kompakt
+
+SEITENLIMIT – ZWINGEND:
+- Das Dokument darf MAXIMAL 2 Seiten lang sein
+- Verwende NIE mehr als eine Leerzeile zwischen Abschnitten
+- Halte alle Texte kurz und prägnant – kein unnötiger Fülltext
+- Abschlussformulierung: maximal 1–2 Sätze
+- Rechtliche Hinweise: als kompakte Liste, keine Absätze dazwischen
+- Druckdaten-Abschnitt: maximal 2–3 Sätze
+- Zahlungsbedingungen: maximal 2 Zeilen
+- Lieferbedingungen: maximal 2–3 Zeilen
+- Falls Inhalt zu lang wird: kürze Fliesstext, nicht die Pflichtangaben
 
 Erstelle das Angebotsdokument mit folgenden Pflichtbestandteilen:
 
@@ -59,7 +70,7 @@ Erstelle das Angebotsdokument mit folgenden Pflichtbestandteilen:
    Sonst: "Sehr geehrte Damen und Herren"
 
 6. EINLEITUNG
-   Kurzer Dank für die Anfrage, Vorfreude auf Zusammenarbeit
+   1 Satz: Dank für die Anfrage, Vorfreude auf Zusammenarbeit
 
 7. 1. LEISTUNGSBESCHREIBUNG (pro Produkt als eigene Position)
    Für jedes Produkt:
@@ -69,25 +80,25 @@ Erstelle das Angebotsdokument mit folgenden Pflichtbestandteilen:
    - MwSt. 8.1%: CHF X.XX
    - Gesamtbetrag inkl. MwSt.: CHF X.XX
 
-8. 2. LIEFERBEDINGUNGEN
-   Liefertermin, Versandhinweis
-   Terminhinweis falls terminbewertung = "knapp" oder "nicht_realistisch" – einmalig, freundlich
+8. 2. LIEFERBEDINGUNGEN (max. 2 Zeilen)
+   Liefertermin + Versandkostenhinweis in einem Satz.
+   Terminhinweis nur falls terminbewertung = "knapp"/"nicht_realistisch" – 1 Satz.
 
-9. 3. ZAHLUNGSBEDINGUNGEN
-   30 Tage netto, bei Erstauftrag 50% Anzahlung
+9. 3. ZAHLUNGSBEDINGUNGEN (max. 2 Zeilen)
+   30 Tage netto. Bei Erstauftrag 50% Anzahlung vor Druckbeginn.
 
-10. 4. DRUCKDATEN
-    Vorhanden: Preflight-Prüfung, Freigabeprozess
-    Nicht vorhanden: Layoutservice, Zeitplan, Mehrkosten
+10. 4. DRUCKDATEN (max. 2 Zeilen)
+    Vorhanden: Preflight + Freigabe in 1 Satz.
+    Nicht vorhanden: Layoutservice + Zeitplan in 1 Satz.
 
-11. 5. RECHTLICHE HINWEISE
-    - Angebot unverbindlich und freibleibend bis Ablaufdatum
+11. 5. RECHTLICHE HINWEISE (kompakte Liste, keine Leerzeilen dazwischen)
+    - Angebot unverbindlich und freibleibend bis [Datum]
     - Preisänderungen vorbehalten
-    - Es gelten unsere AGB, einsehbar auf https://schellenbergdruck.ch
+    - AGB: https://schellenbergdruck.ch
     - Gerichtsstand: Pfäffikon ZH
 
-12. ABSCHLUSS
-    Dank für Vertrauen, Kontaktangaben für Rückfragen
+12. ABSCHLUSS (max. 1 Satz)
+    Kurze Kontaktangabe für Rückfragen
 
 13. UNTERSCHRIFT (linksbündig)
     Freundliche Grüsse
@@ -104,5 +115,7 @@ WICHTIG:
 - Professioneller, formeller Schweizer Geschäftsstil, kein Umgangssprachliches
 - KEINE Linien, KEINE Tabellen, KEINE Trennstriche
 - Empfänger-Adresse immer rechtsbündig formatiert (mit Leerzeichen einrücken)
+- MAXIMAL 2 SEITEN – kürze wo nötig, nie die Pflichtfelder weglassen
+- Nie mehr als 1 Leerzeile zwischen Abschnitten
 - Antworte NUR mit dem fertigen Dokumenttext, ohne Erklärungen davor oder danach
 
