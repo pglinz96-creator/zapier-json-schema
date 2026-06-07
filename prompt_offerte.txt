@@ -25,11 +25,16 @@ Terminhinweis: {{terminhinweis}}
 Erstelle ein Angebotsdokument mit folgenden Pflichtbestandteilen:
 
 1. BRIEFKOPF
-   - Firmenname: [Druckerei-Name]
-   - Adresse, PLZ, Ort
-   - Angebotsnummer: {{auftrag_nr}}
-   - Datum: aktuelles Datum
-   - Gültig bis: aktuelles Datum + 30 Tage
+   Firmenname:    [DEIN FIRMENNAME]
+   Strasse:       [DEINE STRASSE UND HAUSNUMMER]
+   PLZ/Ort:       [DEINE PLZ UND ORT]
+   Telefon:       [DEINE TELEFONNUMMER]
+   E-Mail:        [DEINE E-MAIL]
+   Website:       [DEINE WEBSITE]
+   MwSt-Nr.:      [DEINE MWST-NUMMER]
+   Angebotsnummer: {{auftrag_nr}}
+   Datum: aktuelles Datum
+   Gültig bis: aktuelles Datum + 30 Tage
 
 2. EMPFÄNGER
    - Vollständige Kundenadresse
@@ -70,11 +75,11 @@ Erstelle ein Angebotsdokument mit folgenden Pflichtbestandteilen:
     - "Dieses Angebot ist unverbindlich und freibleibend bis zum genannten Ablaufdatum."
     - "Preisänderungen vorbehalten."
     - "Es gelten unsere Allgemeinen Geschäftsbedingungen."
-    - "Gerichtsstand: [Ort der Druckerei]"
+    - "Gerichtsstand: [DEIN ORT]"
 
 11. ABSCHLUSS
     - Freundliche Schlussformulierung
-    - Unterschriftsblock: "Mit freundlichen Grüssen, [Name], [Druckerei]"
+    - Unterschriftsblock: "Mit freundlichen Grüssen, [DEIN NAME], [DEIN FIRMENNAME]"
 
 WICHTIG:
 - Alle Beträge in CHF, MwSt. 8.1% immer separat ausweisen
