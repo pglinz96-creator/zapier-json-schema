@@ -25,13 +25,13 @@ Terminhinweis: {{terminhinweis}}
 Erstelle ein Angebotsdokument mit folgenden Pflichtbestandteilen:
 
 1. BRIEFKOPF
-   Firmenname:    [DEIN FIRMENNAME]
-   Strasse:       [DEINE STRASSE UND HAUSNUMMER]
-   PLZ/Ort:       [DEINE PLZ UND ORT]
-   Telefon:       [DEINE TELEFONNUMMER]
-   E-Mail:        [DEINE E-MAIL]
-   Website:       [DEINE WEBSITE]
-   MwSt-Nr.:      [DEINE MWST-NUMMER]
+   Firmenname:    Schellenberg Druck AG
+   Strasse:       Schützenhausstrasse 5
+   PLZ/Ort:       8330 Pfäffikon
+   Telefon:       044 953 11 11
+   E-Mail:        info@schellenbergdruck.ch
+   Website:       https://schellenbergdruck.ch
+   MwSt-Nr.:      CHE-102.642.552 MWST
    Angebotsnummer: {{auftrag_nr}}
    Datum: aktuelles Datum
    Gültig bis: aktuelles Datum + 30 Tage
@@ -75,11 +75,11 @@ Erstelle ein Angebotsdokument mit folgenden Pflichtbestandteilen:
     - "Dieses Angebot ist unverbindlich und freibleibend bis zum genannten Ablaufdatum."
     - "Preisänderungen vorbehalten."
     - "Es gelten unsere Allgemeinen Geschäftsbedingungen."
-    - "Gerichtsstand: [DEIN ORT]"
+    - "Gerichtsstand: Pfäffikon ZH"
 
 11. ABSCHLUSS
     - Freundliche Schlussformulierung
-    - Unterschriftsblock: "Mit freundlichen Grüssen, [DEIN NAME], [DEIN FIRMENNAME]"
+    - Unterschriftsblock: "Mit freundlichen Grüssen, Edgar Glinz, Schellenberg Druck AG"
 
 WICHTIG:
 - Alle Beträge in CHF, MwSt. 8.1% immer separat ausweisen
