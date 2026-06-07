@@ -24,11 +24,12 @@ Terminhinweis: {{terminhinweis}}
 
 LAYOUT-VORGABEN (zwingend einhalten):
 - KEINE Trennlinien, KEINE Tabellen, KEINE Rahmen, KEINE Striche
+- KEINE Sonderzeichen wie **, ***, --- oder ähnliche Markdown-Zeichen im Ausgabetext
 - Absender-Block (Schellenberg Druck AG): linksbündig oben
 - Empfänger-Block (Kunde): rechtsbündig, mit EINER Leerzeile Abstand zum Absender
 - Angebotsnummer / Datum / Gültig bis: linksbündig, direkt nach dem Empfänger
 - Fliesstext: linksbündig, NUR EINE Leerzeile zwischen Abschnitten
-- Abschnittstitel (1. LEISTUNGSBESCHREIBUNG etc.): linksbündig, GROSSBUCHSTABEN
+- Abschnittstitel (1. Leistungsbeschreibung etc.): linksbündig, fett formatiert, normale Gross-/Kleinschreibung
 - Beträge: linksbündig aufgelistet, klar getrennt
 - Unterschriftsblock: linksbündig am Ende, kompakt
 
@@ -37,7 +38,7 @@ SEITENLIMIT – ZWINGEND:
 - Verwende NIE mehr als eine Leerzeile zwischen Abschnitten
 - Halte alle Texte kurz und prägnant – kein unnötiger Fülltext
 - Abschlussformulierung: maximal 1–2 Sätze
-- Rechtliche Hinweise: als kompakte Liste, keine Absätze dazwischen
+- Rechtliche Hinweise: kompakte Liste in kleiner Schrift, ohne Überschrift in Grossbuchstaben, keine Absätze dazwischen
 - Druckdaten-Abschnitt: maximal 2–3 Sätze
 - Zahlungsbedingungen: maximal 2 Zeilen
 - Lieferbedingungen: maximal 2–3 Zeilen
@@ -45,7 +46,7 @@ SEITENLIMIT – ZWINGEND:
 
 Erstelle das Angebotsdokument mit folgenden Pflichtbestandteilen:
 
-1. BRIEFKOPF (linksbündig)
+1. Briefkopf (linksbündig, Titel fett)
    Schellenberg Druck AG
    Schützenhausstrasse 5
    8330 Pfäffikon
@@ -54,25 +55,25 @@ Erstelle das Angebotsdokument mit folgenden Pflichtbestandteilen:
    Website: https://schellenbergdruck.ch
    MwSt-Nr.: CHE-102.642.552 MWST
 
-2. EMPFÄNGER (rechtsbündig, 2–3 Leerzeilen Abstand zum Briefkopf)
+2. Empfänger (rechtsbündig, 2–3 Leerzeilen Abstand zum Briefkopf)
    Vollständige Kundenadresse (Name, ggf. Firma, Strasse, PLZ Ort)
 
-3. ANGEBOTSDETAILS (linksbündig)
+3. Angebotsdetails (linksbündig)
    Angebotsnummer: {{auftrag_nr}}
    Datum: aktuelles Datum
    Gültig bis: aktuelles Datum + 30 Tage
 
-4. BETREFF
-   "Angebot Nr. {{auftrag_nr}} – [Produktbezeichnung]"
+4. Betreff (fett)
+   Angebot Nr. {{auftrag_nr}} – [Produktbezeichnung]
 
-5. ANREDEFORMEL
+5. Anredeformel
    Formell mit Namen falls bekannt: "Sehr geehrter Herr [Name]" / "Sehr geehrte Frau [Name]"
    Sonst: "Sehr geehrte Damen und Herren"
 
-6. EINLEITUNG
+6. Einleitung
    1 Satz: Dank für die Anfrage, Vorfreude auf Zusammenarbeit
 
-7. 1. LEISTUNGSBESCHREIBUNG (pro Produkt als eigene Position)
+7. 1. Leistungsbeschreibung (Titel fett, pro Produkt als eigene Position)
    Für jedes Produkt:
    - Position X: [Produktname]
    - Produkt, Format, Farbigkeit, Material, Veredelung, Auflage, Druckdaten, Liefertermin
@@ -80,27 +81,27 @@ Erstelle das Angebotsdokument mit folgenden Pflichtbestandteilen:
    - MwSt. 8.1%: CHF X.XX
    - Gesamtbetrag inkl. MwSt.: CHF X.XX
 
-8. 2. LIEFERBEDINGUNGEN (max. 2 Zeilen)
+8. 2. Lieferbedingungen (Titel fett, max. 2 Zeilen)
    Liefertermin + Versandkostenhinweis in einem Satz.
    Terminhinweis nur falls terminbewertung = "knapp"/"nicht_realistisch" – 1 Satz.
 
-9. 3. ZAHLUNGSBEDINGUNGEN (max. 2 Zeilen)
+9. 3. Zahlungsbedingungen (Titel fett, max. 2 Zeilen)
    30 Tage netto. Bei Erstauftrag 50% Anzahlung vor Druckbeginn.
 
-10. 4. DRUCKDATEN (max. 2 Zeilen)
+10. 4. Druckdaten (Titel fett, max. 2 Zeilen)
     Vorhanden: Preflight + Freigabe in 1 Satz.
     Nicht vorhanden: Layoutservice + Zeitplan in 1 Satz.
 
-11. 5. RECHTLICHE HINWEISE (kompakte Liste, keine Leerzeilen dazwischen)
-    - Angebot unverbindlich und freibleibend bis [Datum]
+11. Rechtliche Hinweise (KEIN Abschnittstitel in Grossbuchstaben, kleiner Text, kompakte Liste ohne Leerzeilen)
+    - Dieses Angebot ist unverbindlich und freibleibend bis [Datum]
     - Preisänderungen vorbehalten
     - AGB: https://schellenbergdruck.ch
     - Gerichtsstand: Pfäffikon ZH
 
-12. ABSCHLUSS (max. 1 Satz)
+12. Abschluss (max. 1 Satz)
     Kurze Kontaktangabe für Rückfragen
 
-13. UNTERSCHRIFT (linksbündig)
+13. Unterschrift (linksbündig)
     Freundliche Grüsse
 
     Edgar Glinz
@@ -114,8 +115,10 @@ WICHTIG:
 - Alle Beträge in CHF, MwSt. 8.1% immer separat ausweisen
 - Professioneller, formeller Schweizer Geschäftsstil, kein Umgangssprachliches
 - KEINE Linien, KEINE Tabellen, KEINE Trennstriche
+- KEINE Markdown-Sonderzeichen wie **, ***, --- im Ausgabetext
 - Empfänger-Adresse immer rechtsbündig formatiert (mit Leerzeichen einrücken)
+- Abschnittstitel fett, normale Gross-/Kleinschreibung (nicht GROSSBUCHSTABEN)
+- Rechtliche Hinweise ohne Überschrift, kompakt, unauffällig am Ende vor der Unterschrift
 - MAXIMAL 2 SEITEN – kürze wo nötig, nie die Pflichtfelder weglassen
 - Nie mehr als 1 Leerzeile zwischen Abschnitten
 - Antworte NUR mit dem fertigen Dokumenttext, ohne Erklärungen davor oder danach
-
