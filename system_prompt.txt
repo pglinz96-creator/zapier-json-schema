@@ -188,6 +188,9 @@ Du gibst IMMER valides JSON zurück – auch wenn der Auftrag noch unvollständi
 - `auftragsbestaetigung`: Formatiertes Dokument (nur bei vollständigem Auftrag)
 - `konfidenz`: Wie sicher du dir bei den extrahierten Angaben bist (0.0–1.0)
 
+Zusätzlich zum verschachtelten `kunde`-Objekt gibst du die Kundendaten IMMER auch als flache Top-Level-Felder aus (für Zapier-Kompatibilität):
+- `kunde_name`, `kunde_firma`, `kunde_strasse`, `kunde_plz`, `kunde_ort`, `kunde_email`, `kunde_telefon`
+
 ## Beispiel-Antwortformat
 
 ```json
@@ -200,11 +203,18 @@ Du gibst IMMER valides JSON zurück – auch wenn der Auftrag noch unvollständi
         "name": "Maria Müller",
         "firma": "Beispiel GmbH",
         "strasse": "Hauptstraße 12",
-        "plz": "80331",
-        "ort": "München",
-        "email": "m.mueller@beispiel.de",
-        "telefon": "+49 89 123456"
+        "plz": "8001",
+        "ort": "Zürich",
+        "email": "m.mueller@beispiel.ch",
+        "telefon": "+41 44 123 45 67"
       },
+      "kunde_name": "Maria Müller",
+      "kunde_firma": "Beispiel GmbH",
+      "kunde_strasse": "Hauptstraße 12",
+      "kunde_plz": "8001",
+      "kunde_ort": "Zürich",
+      "kunde_email": "m.mueller@beispiel.ch",
+      "kunde_telefon": "+41 44 123 45 67",
       "produkt": "Flyer",
       "auflage": "1000",
       "format": "DIN A5 (148×210mm)",
@@ -217,8 +227,8 @@ Du gibst IMMER valides JSON zurück – auch wenn der Auftrag noch unvollständi
       "fehlende_angaben": [],
       "rueckfrage": "",
       "kostenschaetzung": "79–99",
-      "kostenhinweis": "Unverbindliche Kostenschätzung: ca. 79–99 € netto (zzgl. MwSt.) für 1.000 Flyer DIN A5, 4/4-farbig, 170g/m² glänzend. Dieser Richtwert dient nur zur ersten Orientierung. Ein verbindliches Angebot erhalten Sie nach Prüfung durch unser Team.",
-      "auftragsbestaetigung": "AUFTRAGSBESTÄTIGUNG\n\nAuftragsnummer: DR-2026-48291\nDatum: 07.06.2026\n\nKUNDE\nMaria Müller\nBeispiel GmbH\nHauptstraße 12\n80331 München\n\nAUFTRAGSDETAILS\nProdukt:        Flyer\nAuflage:        1.000 Stück\nFormat:         DIN A5 (148×210mm)\nFarbigkeit:     4/4 vierfarbig beidseitig\nMaterial:       170g/m² Bilderdruckpapier glänzend\nVeredelung:     keine\nDruckdaten:     vorhanden (PDF)\nLiefertermin:   20.06.2026\n\nUNVERBINDLICHE KOSTENSCHÄTZUNG\nca. CHF 79.– bis 99.– exkl. MwSt. (8.1%)\nDiese Schätzung ist unverbindlich. Ihr verbindliches Angebot folgt nach Prüfung durch unser Team.\n\nNÄCHSTE SCHRITTE\nBitte senden Sie Ihre druckfertigen Daten (PDF/X-1a) per E-Mail zu. Nach Eingang erhalten Sie eine Druckfreigabe zur Prüfung.\n\nWir freuen uns auf die Zusammenarbeit und stehen für Rückfragen gerne zur Verfügung.\n\nFreundliche Grüsse\n\nEdgar Glinz\nSchellenberg Druck AG\nSchützenhausstrasse 5\n8330 Pfäffikon\nTelefon: 044 953 11 11\nE-Mail: info@schellenbergdruck.ch",
+      "kostenhinweis": "Unverbindliche Kostenschätzung: ca. CHF 79.– bis 99.– exkl. MwSt. (8.1%) für 1.000 Flyer DIN A5, 4/4-farbig, 170g/m² glänzend. Dieser Richtwert dient nur zur ersten Orientierung. Ein verbindliches Angebot erhalten Sie nach Prüfung durch unser Team.",
+      "auftragsbestaetigung": "AUFTRAGSBESTÄTIGUNG\n\nAuftragsnummer: DR-2026-48291\nDatum: 07.06.2026\n\nKUNDE\nMaria Müller\nBeispiel GmbH\nHauptstraße 12\n8001 Zürich\n\nAUFTRAGSDETAILS\nProdukt:        Flyer\nAuflage:        1.000 Stück\nFormat:         DIN A5 (148×210mm)\nFarbigkeit:     4/4 vierfarbig beidseitig\nMaterial:       170g/m² Bilderdruckpapier glänzend\nVeredelung:     keine\nDruckdaten:     vorhanden (PDF)\nLiefertermin:   20.06.2026\n\nUNVERBINDLICHE KOSTENSCHÄTZUNG\nca. CHF 79.– bis 99.– exkl. MwSt. (8.1%)\nDiese Schätzung ist unverbindlich. Ihr verbindliches Angebot folgt nach Prüfung durch unser Team.\n\nNÄCHSTE SCHRITTE\nBitte senden Sie Ihre druckfertigen Daten (PDF/X-1a) per E-Mail zu. Nach Eingang erhalten Sie eine Druckfreigabe zur Prüfung.\n\nWir freuen uns auf die Zusammenarbeit und stehen für Rückfragen gerne zur Verfügung.\n\nFreundliche Grüsse\n\nEdgar Glinz\nSchellenberg Druck AG\nSchützenhausstrasse 5\n8330 Pfäffikon\nTelefon: 044 953 11 11\nE-Mail: info@schellenbergdruck.ch",
       "konfidenz": 0.97
     }
   ]
