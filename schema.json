@@ -142,9 +142,18 @@
             "maximum": 1,
             "description": "Konfidenz der KI-Extraktion (0.0–1.0)"
           },
+          "terminhinweis": {
+            "type": "string",
+            "description": "Bewertung des Liefertermins und ggf. Alternativtermin"
+          },
+          "terminbewertung": {
+            "type": "string",
+            "enum": ["realistisch", "knapp", "nicht_realistisch"],
+            "description": "Machbarkeit des gewünschten Liefertermins"
+          },
           "kostenschaetzung": {
             "type": "string",
-            "description": "Ungefähre Preisspanne in EUR netto (z.B. '79–99')"
+            "description": "Ungefähre Preisspanne in CHF exkl. MwSt. (z.B. 'CHF 89–109')"
           },
           "kostenhinweis": {
             "type": "string",

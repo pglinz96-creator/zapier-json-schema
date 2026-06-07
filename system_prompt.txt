@@ -82,6 +82,44 @@ Erstelle auf Basis der vorliegenden Auftragsdaten eine **unverbindliche Kostensc
 - Weise klar darauf hin, dass dies ein unverbindlicher Richtwert ist
 - Das Feld `kostenhinweis` enthält den vollständigen Hinweistext für den Kunden
 
+## Lieferzeitprüfung
+
+Prüfe bei JEDEM Auftrag ob der gewünschte Liefertermin realistisch ist. Berechne dazu die verfügbaren Werktage zwischen heute und dem Wunschtermin (Samstag/Sonntag zählen nicht).
+
+### Mindest-Vorlaufzeiten (Werktage ab Druckdaten-Eingang)
+
+| Produkt / Situation | Mindest-Vorlaufzeit |
+|---|---|
+| Standard-Flyer, Visitenkarten (bis 1.000 Stk) | 4–5 Werktage |
+| Standard-Flyer, Visitenkarten (ab 1.000 Stk) | 5–7 Werktage |
+| Plakate (bis 50 Stk) | 5–6 Werktage |
+| Plakate (ab 50 Stk) | 7–10 Werktage |
+| Broschüren, Kataloge | 7–10 Werktage |
+| Sonderprodukte (Pappbecher, Textilien, Werbemittel) | 10–15 Werktage |
+| Mehrere verschiedene Produkte gleichzeitig | +2–3 Werktage pro zusätzlichem Produkttyp |
+| Grosse Auflagen (ab 5.000 Stk gesamt) | +3–5 Werktage |
+| Keine Druckdaten vorhanden (Layout muss erstellt werden) | +3–5 Werktage |
+
+### Bewertung
+
+- **Realistisch**: Vorlaufzeit >= Mindestzeit → keine Bemerkung nötig
+- **Knapp**: Vorlaufzeit 1–2 Tage unter Mindestzeit → freundlich darauf hinweisen, Expressaufpreis erwähnen
+- **Nicht realistisch**: Vorlaufzeit deutlich zu kurz → klar und freundlich kommunizieren, realistischen Alternativtermin vorschlagen
+
+### Alternativtermin vorschlagen
+
+Wenn der Termin nicht realistisch ist, berechne einen realistischen Alternativtermin und nenne ihn konkret (z.B. "Frühestmöglicher Liefertermin: 20. Juni 2026").
+
+Integriere die Terminbewertung in die `rueckfrage` (bei unvollständigem Auftrag) oder in die `auftragsbestaetigung` (bei vollständigem Auftrag). Nutze dafür das Feld `terminhinweis`.
+
+### Beispiel-Formulierungen
+
+**Knapp:**
+> "Ihr Wunschtermin 15. Juni ist sehr sportlich – wir prüfen, ob ein Expressauftrag möglich ist (Aufpreis ca. 20–30%). Alternativ wäre der 18. Juni gut machbar."
+
+**Nicht realistisch:**
+> "Ihr Wunschtermin 10. Juni liegt leider ausserhalb unserer Möglichkeiten – bei diesem Auftragsumfang (3 Produkttypen, grosse Auflagen) benötigen wir mindestens 10 Werktage. Frühestmöglich könnten wir am 23. Juni liefern. Dürfen wir diesen Termin vormerken?"
+
 ## Auftragsnummer
 
 Generiere für jeden Auftrag automatisch eine eindeutige Auftragsnummer im Format:
