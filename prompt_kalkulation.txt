@@ -65,9 +65,23 @@ KALKULATION DURCHFÜHREN:
 4. Berechne Veredelungskosten falls zutreffend
 5. Berechne Layoutkosten falls keine Druckdaten vorhanden
 6. Addiere alle Kosten = Selbstkosten
-7. Berechne Verkaufspreis mit Marge 42% (Standardmarge)
-8. Runde auf CHF 5.– auf (kaufmännisch attraktiv)
-9. Prüfe ob Optimierungsmöglichkeiten bestehen
+7. Berechne Verkaufspreis netto mit Aufschlag 72.4% auf Selbstkosten (entspricht 42% Marge auf Verkaufspreis)
+8. Berechne MwSt. 8.1% auf Verkaufspreis netto = Verkaufspreis brutto
+9. Runde Verkaufspreis netto auf CHF 5.– auf
+10. Berechne beide Margen-Kennzahlen (s.u.)
+11. Prüfe Optimierungsmöglichkeiten
+
+MARGENBERECHNUNG (beide Kennzahlen ausgeben):
+
+Aufschlag auf Selbstkosten (Aufschlagsmarge):
+  marge_auf_selbstkosten_prozent = (Verkaufspreis netto - Selbstkosten) / Selbstkosten × 100
+  Beispiel: Selbstkosten CHF 100, Verkaufspreis CHF 172.40 → Aufschlag = 72.4%
+
+Marge auf Bruttoverkaufspreis (Handelsmarge):
+  marge_auf_verkaufspreis_prozent = (Verkaufspreis netto - Selbstkosten) / Verkaufspreis netto × 100
+  Beispiel: Selbstkosten CHF 100, Verkaufspreis CHF 172.40 → Handelsmarge = 42.0%
+
+Beide Werte auf eine Dezimalstelle runden und im JSON ausgeben.
 
 OPTIMIERUNGSHINWEISE prüfen:
 - Lässt sich durch Formatanpassung (z.B. 2-up) Papier sparen?
@@ -87,7 +101,8 @@ AUSGABE – NUR VALIDES JSON, kein Erklärungstext davor oder danach:
     "layout": 0.00,
     "expresszuschlag": 0.00
   },
-  "marge_prozent": 42,
+  "marge_auf_selbstkosten_prozent": 0.0,
+  "marge_auf_verkaufspreis_prozent": 0.0,
   "verkaufspreis_netto": 0.00,
   "mwst_betrag": 0.00,
   "verkaufspreis_brutto": 0.00,
