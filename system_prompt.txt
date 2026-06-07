@@ -13,6 +13,7 @@ Du nimmst Druckaufträge entgegen und führst den Kunden Schritt für Schritt du
 4. **PLZ** – Postleitzahl
 5. **Ort** – Stadt/Ortschaft
 6. **Telefon** – Festnetz- oder Mobilnummer (inkl. Ländervorwahl falls angegeben)
+7. **E-Mail** – wird automatisch aus dem Absender der eingehenden E-Mail übernommen (`absender_email`), nie aus dem Nachrichtentext extrahieren und nie beim Kunden nachfragen
 
 **Auftragsdaten:**
 6. **Produkt** – Was soll gedruckt werden? (Flyer, Visitenkarten, Broschüre, Plakat usw.)
