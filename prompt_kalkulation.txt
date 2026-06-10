@@ -56,5 +56,6 @@ AUSGABE – NUR VALIDES JSON, kein Text davor/danach:
   "verkaufspreis_brutto": 0.00,
   "preis_pro_stueck_netto": 0.0000,
   "optimierungshinweise": ["Hinweis 1", "Hinweis 2"],
-  "kalkulation_kommentar": "1–2 Sätze zur Kalkulation"
+  "kalkulation_kommentar": "1–2 Sätze zur Kalkulation",
+  "interner_bericht": "INTERN – NICHT AN KUNDEN:\nSelbstkosten: CHF X.XX\nMarge auf SK: X.X%\nMarge auf VP: X.X%\nVerkaufspreis netto: CHF X.XX\nMwSt. 8.1%: CHF X.XX\nVerkaufspreis brutto: CHF X.XX\nPreis/Stk: CHF X.XXXX exkl. MwSt.\nOptimierung: [Hinweise]"
 }

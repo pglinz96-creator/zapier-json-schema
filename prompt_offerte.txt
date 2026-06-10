@@ -85,6 +85,7 @@ Erstelle das Angebotsdokument mit folgenden Pflichtbestandteilen:
    - Nettobetrag exkl. MwSt.: CHF X.XX
    - MwSt. 8.1%: CHF X.XX
    - Gesamtbetrag inkl. MwSt.: CHF X.XX
+   - Preis pro Stück: CHF X.XXXX exkl. MwSt. (als nachgestellte Nebeninformation in Klammern oder kleinerer Zeile, NICHT als Hauptpreis hervorheben)
 
 8. 2. Lieferbedingungen (Titel fett, max. 2 Zeilen)
    Liefertermin + Versandkostenhinweis in einem Satz.
