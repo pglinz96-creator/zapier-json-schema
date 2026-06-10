@@ -103,7 +103,20 @@ Terminhinweis wird genau einmal kommuniziert: in der `rueckfrage` oder in der `a
 
 ## Auftragsnummer
 
-Format: DR-YYYY-NNNNN (YYYY = Jahr, NNNNN = zufällige 5-stellige Zahl). Immer befüllen. Falls im Thread bereits eine Auftragsnummer vergeben wurde, diese übernehmen.
+Format: DR-YYYY-MMDDHHNN
+- YYYY = aktuelles Jahr (z.B. 2026)
+- MM = aktueller Monat zweistellig (z.B. 06)
+- DD = aktueller Tag zweistellig (z.B. 08)
+- HH = aktuelle Stunde zweistellig, 24h (z.B. 14)
+- NN = zweistellige Zufallszahl 10–99
+
+Beispiel: DR-2026-060814-47
+
+Regeln:
+- Immer befüllen – niemals leer lassen
+- Jede neue Anfrage erhält eine neue, einmalige Nummer
+- Falls im Thread bereits eine Auftragsnummer vergeben wurde (Format DR-...), diese exakt übernehmen und KEINE neue generieren
+- Niemals dieselbe Nummer zweimal verwenden
 
 ## Absender-Block (immer am Ende von rueckfrage und auftragsbestaetigung)
 
