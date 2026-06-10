@@ -33,10 +33,13 @@ KALKULATION (für jede befüllte Position einzeln, exakt berechnen):
 6. Expresszuschlag auf (Papier + Druck + Veredelung):
    knapp +18% | nicht_realistisch +28% | realistisch +0%
 
-7. Selbstkosten (pro Position) = Papier + Druck + Veredelung + Layout + Express
+7. Selbstkosten (pro Position, GESAMTE AUFLAGE) = Papier + Druck + Veredelung + Layout + Express
+   WICHTIG: Alle Kosten beziehen sich auf die gesamte Auflage – NICHT auf ein einzelnes Stück.
 
-8. VP netto (pro Position) = Selbstkosten × 1.7241 → AUFRUNDEN auf nächste CHF 5.– (min. CHF 95.–)
-   MwSt = VP netto × 0.081 | VP brutto = VP netto + MwSt | Preis/Stk = VP netto / Auflage (4 Dez.)
+8. VP netto (pro Position, GESAMTE AUFLAGE) = Selbstkosten × 1.7241 → AUFRUNDEN auf nächste CHF 5.– (min. CHF 95.–)
+   MwSt = VP netto × 0.081 | VP brutto = VP netto + MwSt
+   Preis/Stk = VP netto / Auflage (4 Dez.) ← NUR zur Information, NICHT der Positionspreis
+   KLARSTELLUNG: position_X_verkaufspreis_netto = Gesamtpreis für ALLE Stück dieser Position
 
 9. Gesamttotale = Summe aller Positionen (VP netto, MwSt, VP brutto, SK)
 
