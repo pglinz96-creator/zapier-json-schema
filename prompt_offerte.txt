@@ -21,11 +21,15 @@ Druckdaten vorhanden: {{druckdaten_vorhanden}}
 Terminbewertung: {{terminbewertung}}
 Terminhinweis: {{terminhinweis}}
 
-Kalkulierte Preise (aus Kalkulations-KI):
-Verkaufspreis netto (exkl. MwSt.): CHF {{verkaufspreis_netto}}
-MwSt. 8.1%: CHF {{mwst_betrag}}
-Verkaufspreis brutto (inkl. MwSt.): CHF {{verkaufspreis_brutto}}
-Preis pro Stück: CHF {{preis_pro_stueck_netto}} exkl. MwSt.
+Kalkulierte Preise pro Position (aus Kalkulations-KI):
+Position 1: {{position_1_produkt}} – netto CHF {{position_1_verkaufspreis_netto}} / brutto CHF {{position_1_verkaufspreis_brutto}} / Preis/Stk CHF {{position_1_preis_pro_stueck_netto}}
+Position 2: {{position_2_produkt}} – netto CHF {{position_2_verkaufspreis_netto}} / brutto CHF {{position_2_verkaufspreis_brutto}} / Preis/Stk CHF {{position_2_preis_pro_stueck_netto}}
+Position 3: {{position_3_produkt}} – netto CHF {{position_3_verkaufspreis_netto}} / brutto CHF {{position_3_verkaufspreis_brutto}} / Preis/Stk CHF {{position_3_preis_pro_stueck_netto}}
+
+Gesamttotal:
+Verkaufspreis netto (exkl. MwSt.): CHF {{gesamt_verkaufspreis_netto}}
+MwSt. 8.1%: CHF {{gesamt_mwst_betrag}}
+Verkaufspreis brutto (inkl. MwSt.): CHF {{gesamt_verkaufspreis_brutto}}
 
 LAYOUT-VORGABEN (zwingend einhalten):
 - KEINE Trennlinien, KEINE Tabellen, KEINE Rahmen, KEINE Striche
@@ -79,13 +83,18 @@ Erstelle das Angebotsdokument mit folgenden Pflichtbestandteilen:
    1 Satz: Dank für die Anfrage, Vorfreude auf Zusammenarbeit
 
 7. 1. Leistungsbeschreibung (Titel fett, pro Produkt als eigene Position)
-   Für jedes Produkt:
+   Für jede befüllte Position (leere Positionen weglassen):
    - Position X: [Produktname]
-   - Produkt, Format, Farbigkeit, Material, Veredelung, Auflage, Druckdaten, Liefertermin
+   - Spezifikationen: Format, Farbigkeit, Material, Veredelung, Auflage, Druckdaten, Liefertermin
    - Nettobetrag exkl. MwSt.: CHF X.XX
    - MwSt. 8.1%: CHF X.XX
    - Gesamtbetrag inkl. MwSt.: CHF X.XX
-   - Preis pro Stück: CHF X.XXXX exkl. MwSt. (als nachgestellte Nebeninformation in Klammern oder kleinerer Zeile, NICHT als Hauptpreis hervorheben)
+   - (Preis pro Stück: CHF X.XXXX exkl. MwSt.) ← Nebeninfo in Klammern, nicht als Hauptpreis
+
+   Nach allen Positionen das Gesamttotal ausweisen:
+   - Gesamttotal netto (exkl. MwSt.): CHF X.XX
+   - MwSt. 8.1%: CHF X.XX
+   - Gesamttotal inkl. MwSt.: CHF X.XX
 
 8. 2. Lieferbedingungen (Titel fett, max. 2 Zeilen)
    Liefertermin + Versandkostenhinweis in einem Satz.
