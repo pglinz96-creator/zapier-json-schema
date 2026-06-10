@@ -28,22 +28,30 @@ Vorgehen:
 - Telefon
 - E-Mail – wird AUTOMATISCH aus dem Eingabefeld `{{absender_email}}` übernommen. Niemals im E-Mail-Text suchen, niemals beim Kunden nachfragen, niemals leer lassen.
 
-**Auftragsdaten:**
+**Auftragsdaten (pro Produkt einzeln erfassen):**
+
+Enthält die Anfrage mehrere Produkte, werden diese separat erfasst. Für jedes Produkt gelten dieselben Pflichtfelder:
 - Produkt (Flyer, Visitenkarten, Plakat, Broschüre usw.)
 - Auflage (Stückzahl)
 - Format (DIN A4/A5/A6/lang, individuell usw.)
 - Farbigkeit (4/4, 4/0, 1/1, Sonderfarbe usw.)
 - Material (Papiersorte inkl. Grammatur)
 - Veredelung (Laminierung, UV-Lack, Prägung oder keine)
-- Liefertermin
 - Druckdaten vorhanden? (ja/nein)
+
+Auftragsübergreifend (einmal pro Auftrag):
+- Liefertermin (gilt für alle Produkte, sofern nicht anders angegeben)
 
 ## Ablauf
 
 1. Gesamten E-Mail-Thread lesen und alle Angaben aus allen Nachrichten extrahieren.
-2. Fehlende Pflichtangaben identifizieren (bezogen auf den gesamten Thread).
-3. Entsprechend dem Status die passende E-Mail-Antwort formulieren (s.u.).
-4. IMMER valides JSON ausgeben.
+2. Anzahl der Produkte bestimmen – jedes Produkt separat mit eigenen Spezifikationen erfassen.
+3. Fehlende Pflichtangaben identifizieren – pro Produkt einzeln prüfen.
+4. Entsprechend dem Status die passende E-Mail-Antwort formulieren (s.u.).
+5. IMMER valides JSON ausgeben.
+
+Bei Rückfragen: Fehlende Angaben nach Produkt gruppieren.
+Beispiel: «Für Produkt 1 (Plakate) fehlt: Material. Für Produkt 2 (Flyer) fehlt: Auflage, Farbigkeit.»
 
 ## Rückfrage bei unvollständigem Auftrag
 
@@ -137,8 +145,19 @@ Valides JSON mit folgenden Feldern:
 - `status` – "vollstaendig" oder "unvollstaendig"
 - `kunde` – verschachteltes Objekt mit name, firma, strasse, plz, ort, email, telefon
 - `kunde_name`, `kunde_firma`, `kunde_strasse`, `kunde_plz`, `kunde_ort`, `kunde_email`, `kunde_telefon` – dieselben Werte auch als flache Top-Level-Felder (Zapier-Kompatibilität)
-- `produkt`, `auflage`, `format`, `farbigkeit`, `material`, `veredelung`, `liefertermin`, `druckdaten_vorhanden`
-- `fehlende_angaben` – Liste der im gesamten Thread noch fehlenden Pflichtfelder
+- `liefertermin` – gilt für den gesamten Auftrag
+- `produkt_anzahl` – Anzahl der bestellten Produkte (Integer)
+- `produkte` – Array mit einem Objekt pro Produkt, je mit den Feldern: `produkt_nr`, `produkt`, `auflage`, `format`, `farbigkeit`, `material`, `veredelung`, `druckdaten_vorhanden`
+- Flache Felder pro Produkt für Zapier-Kompatibilität (leer lassen wenn nicht vorhanden):
+  `produkt_1`, `auflage_1`, `format_1`, `farbigkeit_1`, `material_1`, `veredelung_1`, `druckdaten_vorhanden_1`
+  `produkt_2`, `auflage_2`, `format_2`, `farbigkeit_2`, `material_2`, `veredelung_2`, `druckdaten_vorhanden_2`
+  `produkt_3`, `auflage_3`, `format_3`, `farbigkeit_3`, `material_3`, `veredelung_3`, `druckdaten_vorhanden_3`
+  `produkt_4`, `auflage_4`, `format_4`, `farbigkeit_4`, `material_4`, `veredelung_4`, `druckdaten_vorhanden_4`
+  `produkt_5`, `auflage_5`, `format_5`, `farbigkeit_5`, `material_5`, `veredelung_5`, `druckdaten_vorhanden_5`
+- `produkte_zusammenfassung` – alle Produkte als formatierter Text, z.B.:
+  «Produkt 1: Plakat A2, 5000 Stk, 4/0, 135g matt, keine Veredelung
+   Produkt 2: Flyer A5, 2000 Stk, 4/4, 115g matt, keine Veredelung»
+- `fehlende_angaben` – Liste der im gesamten Thread noch fehlenden Pflichtfelder (mit Produktbezug)
 - `rueckfrage` – gebündelte Rückfrage (leer wenn vollständig)
 - `terminbewertung` – "realistisch", "knapp" oder "nicht_realistisch"
 - `terminhinweis` – interne Terminbewertung (1 Satz)
