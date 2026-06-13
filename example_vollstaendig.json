@@ -1,0 +1,29 @@
+{
+  "auftraege": [
+    {
+      "auftrag_id": "DR-2026-0042",
+      "status": "vollstaendig",
+      "kunde": {
+        "name": "Maria Müller",
+        "email": "m.mueller@beispielfirma.de",
+        "telefon": "+49 89 12345678",
+        "firma": "Beispiel GmbH"
+      },
+      "produkt": "Flyer",
+      "auflage": "2000",
+      "format": "DIN A5 (148×210mm)",
+      "farbigkeit": "4/4 (vierfarbig beidseitig)",
+      "material": "170g/m² Bilderdruckpapier glänzend",
+      "veredelung": "Cellophanierung matt",
+      "weiterverarbeitung": "keine",
+      "liefertermin": "2026-06-20",
+      "druckdaten_vorhanden": true,
+      "druckdaten_format": "PDF/X-1a",
+      "besondere_anforderungen": "Bitte mit Pantone 485C für das Firmenrot drucken",
+      "fehlende_angaben": [],
+      "rueckfrage": "",
+      "konfidenz": 0.97,
+      "ursprungstext": "Guten Tag, wir benötigen 2000 Flyer im A5-Format, vierfarbig beidseitig mit mattem Cellophan. Papier: 170g glänzend. Druckfertige PDF liegt vor. Liefertermin: 20. Juni. Wichtig: das Firmenrot bitte als Pantone 485C umsetzen. Kontakt: Maria Müller, m.mueller@beispielfirma.de, 089 12345678."
+    }
+  ]
+}
