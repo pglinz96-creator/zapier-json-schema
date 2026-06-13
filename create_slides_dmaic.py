@@ -645,6 +645,133 @@ add_rect(slide, 0, 7.25, 13.33, 0.25, LIGHT_BOX)
 add_textbox(slide, "Schellenberg Druck AG · Schützenhausstrasse 5 · 8330 Pfäffikon · schellenbergdruck.ch  |  Juni 2026",
             0.5, 7.28, 12.5, 0.2, font_size=10, color=MID, align=PP_ALIGN.CENTER)
 
+# ══════════════════════════════════════════════════════════════════
+# SLIDE 12 – SCREENSHOT: ZAPIER WORKFLOW (Phase 1)
+# ══════════════════════════════════════════════════════════════════
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+set_bg(slide)
+add_rect(slide, 0, 0, 13.33, 0.08, ORANGE)
+
+add_textbox(slide, "Workflow Evolution – Phase 1: Zapier", 0.6, 0.2, 12, 0.65,
+            font_size=28, bold=True, color=DARK)
+add_textbox(slide, "Erster funktionsfähiger Workflow | Gmail → AI → Kalkulation → HitL → Versand",
+            0.6, 0.88, 12, 0.38, font_size=13, color=MID)
+
+# Screenshot placeholder – Zapier workflow
+add_rect(slide, 0.5, 1.4, 12.3, 4.95, LIGHT_BOX,
+         line_color=RGBColor(0xCB, 0xD5, 0xE0))
+add_textbox(slide, "📸  Screenshot einfügen:", 4.5, 2.5, 4.5, 0.5,
+            font_size=14, color=MID, align=PP_ALIGN.CENTER)
+add_textbox(slide, "Zapier Workflow Übersicht\n(erster Screenshot aus Chatverlauf)",
+            3.5, 3.1, 6.5, 0.9, font_size=13, color=RGBColor(0xA0, 0xAE, 0xC0),
+            align=PP_ALIGN.CENTER, italic=True)
+
+# Caption boxes below
+captions_z = [
+    ("Step 1–2", "Gmail Trigger\n+ AI Analyse"),
+    ("Step 3",   "Path: vollständig\nvs. unvollständig"),
+    ("Step 6–7", "Kalkulation\n+ Offerte AI"),
+    ("Step 9",   "Human in\nthe Loop"),
+    ("Step 16",  "Rückfrage\nE-Mail"),
+]
+bwc = 2.2
+for i, (step, desc) in enumerate(captions_z):
+    x = 0.5 + i * (bwc + 0.17)
+    add_rect(slide, x, 6.5, bwc, 0.8, PHASE_BG["D"], line_color=D_COL)
+    add_textbox(slide, step, x+0.1, 6.55, bwc-0.2, 0.3,
+                font_size=10, bold=True, color=D_COL)
+    add_textbox(slide, desc, x+0.1, 6.85, bwc-0.2, 0.35,
+                font_size=10, color=MID)
+
+# ══════════════════════════════════════════════════════════════════
+# SLIDE 13 – SCREENSHOT: N8N PHASE 1 (erste Version)
+# ══════════════════════════════════════════════════════════════════
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+set_bg(slide)
+add_rect(slide, 0, 0, 13.33, 0.08, ORANGE)
+
+add_textbox(slide, "Workflow Evolution – Phase 2a: n8n Einstieg", 0.6, 0.2, 12, 0.65,
+            font_size=28, bold=True, color=DARK)
+add_textbox(slide, "Erste n8n Version | Gmail + Webhook → Vollständigkeit → Kalkulation → Google Docs",
+            0.6, 0.88, 12, 0.38, font_size=13, color=MID)
+
+# Two placeholders side by side
+add_rect(slide, 0.5, 1.38, 5.95, 4.6, LIGHT_BOX,
+         line_color=RGBColor(0xCB, 0xD5, 0xE0))
+add_textbox(slide, "📸  Screenshot einfügen:", 1.0, 2.6, 4.9, 0.45,
+            font_size=13, color=MID, align=PP_ALIGN.CENTER)
+add_textbox(slide, "n8n Workflow – Version 1\n(2 Kanäle: Gmail + Webhook)\nScreenshot aus Chatverlauf",
+            1.0, 3.15, 4.9, 0.9, font_size=12,
+            color=RGBColor(0xA0, 0xAE, 0xC0), align=PP_ALIGN.CENTER, italic=True)
+
+add_rect(slide, 6.85, 1.38, 5.95, 4.6, LIGHT_BOX,
+         line_color=RGBColor(0xCB, 0xD5, 0xE0))
+add_textbox(slide, "📸  Screenshot einfügen:", 7.35, 2.6, 4.9, 0.45,
+            font_size=13, color=MID, align=PP_ALIGN.CENTER)
+add_textbox(slide, "n8n Workflow – Version 2\n(6 Kanäle: + Twilio, WhatsApp,\nTelegram, Kontaktformular)\nScreenshot aus Chatverlauf",
+            7.35, 3.05, 4.9, 1.1, font_size=12,
+            color=RGBColor(0xA0, 0xAE, 0xC0), align=PP_ALIGN.CENTER, italic=True)
+
+# Delta note
+add_rect(slide, 0.5, 6.15, 5.95, 1.1, PHASE_BG["I"], line_color=I_COL)
+add_textbox(slide, "Version 1 – 2 Kanäle", 0.65, 6.22, 5.6, 0.32,
+            font_size=11, bold=True, color=I_COL)
+add_multiline(slide, ["Gmail · Webhook"], 0.65, 6.58, 5.6, 0.55,
+              font_size=11, color=MID)
+
+add_rect(slide, 6.85, 6.15, 5.95, 1.1, PHASE_BG["I"], line_color=I_COL)
+add_textbox(slide, "Version 2 – 6 Kanäle", 7.0, 6.22, 5.6, 0.32,
+            font_size=11, bold=True, color=I_COL)
+add_multiline(slide, ["+ Twilio · WhatsApp · Telegram · Formular"],
+              7.0, 6.58, 5.6, 0.55, font_size=11, color=MID)
+
+# ══════════════════════════════════════════════════════════════════
+# SLIDE 14 – SCREENSHOT: N8N AKTUELLER STAND
+# ══════════════════════════════════════════════════════════════════
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+set_bg(slide)
+add_rect(slide, 0, 0, 13.33, 0.08, ORANGE)
+
+add_textbox(slide, "Workflow Evolution – Phase 2b: Aktueller Stand", 0.6, 0.2, 12, 0.65,
+            font_size=28, bold=True, color=DARK)
+add_textbox(slide, "Vollständiger Workflow mit HitL Wait-Node, Genehmigungspfad und Fehlerbehandlung",
+            0.6, 0.88, 12, 0.38, font_size=13, color=MID)
+
+# Large screenshot placeholder
+add_rect(slide, 0.5, 1.38, 8.5, 5.35, LIGHT_BOX,
+         line_color=RGBColor(0xCB, 0xD5, 0xE0))
+add_textbox(slide, "📸  Screenshot einfügen:", 2.5, 3.0, 4.5, 0.45,
+            font_size=14, color=MID, align=PP_ALIGN.CENTER)
+add_textbox(slide, "n8n Workflow – Aktuellster Stand\n(vollständiger Flow mit allen Nodes)\nScreenshot aus Chatverlauf",
+            2.0, 3.6, 5.5, 0.9, font_size=12,
+            color=RGBColor(0xA0, 0xAE, 0xC0), align=PP_ALIGN.CENTER, italic=True)
+
+# Node legend
+add_rect(slide, 9.3, 1.38, 3.5, 5.35, PHASE_BG["C"], line_color=C_COL)
+add_rect(slide, 9.3, 1.38, 3.5, 0.42, C_COL)
+add_textbox(slide, "Node-Legende", 9.45, 1.43, 3.2, 0.32,
+            font_size=12, bold=True, color=WHITE)
+legend_items = [
+    ("📧", "Gmail / E-Mail"),
+    ("🤖", "Claude AI (Anthropic)"),
+    ("⚙️", "Code / Transform"),
+    ("🔀", "IF / Switch Node"),
+    ("⏳", "Wait-Node (HitL)"),
+    ("📄", "Google Docs"),
+    ("🔔", "Webhook Trigger"),
+    ("💾", "Daten speichern"),
+    ("✉️", "Nachricht senden"),
+]
+for j, (icon, label) in enumerate(legend_items):
+    add_textbox(slide, f"{icon}  {label}", 9.45, 1.95 + j*0.52,
+                3.2, 0.45, font_size=11, color=DARK)
+
+# Status summary bar
+add_rect(slide, 0.5, 6.88, 12.3, 0.45, PHASE_BG["I"], line_color=I_COL)
+add_textbox(slide,
+    "Status: HitL implementiert ✅ · 6 Kanäle ✅ · Kalkulation ✅ · Fehlerbehandlung ⏳ · Credentials Twilio/WA/TG ⏳",
+    0.65, 6.95, 12.0, 0.32, font_size=11, color=I_COL)
+
 # ── Save ───────────────────────────────────────────────────────
 out = "/home/user/zapier-json-schema/KI_Auftragsannahme_DMAIC.pptx"
 prs.save(out)
