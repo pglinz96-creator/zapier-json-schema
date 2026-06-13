@@ -462,6 +462,339 @@ add_rect(slide, 1, 7.1, 11.1, 0.2, ACCENT)
 add_textbox(slide, "Schellenberg Druck AG · Schützenhausstrasse 5 · 8330 Pfäffikon · schellenbergdruck.ch",
             1, 7.1, 11.1, 0.35, font_size=10, color=GREY_TEXT, align=PP_ALIGN.CENTER)
 
+# ══════════════════════════════════════════════════════════════════
+# SLIDE 11 – VON ZAPIER ZU N8N
+# ══════════════════════════════════════════════════════════════════
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+set_bg(slide, DARK_BLUE)
+add_rect(slide, 0, 0, 0.45, 7.5, ACCENT)
+
+add_textbox(slide, "Von Zapier zu n8n", 1, 0.35, 11, 0.7,
+            font_size=30, bold=True, color=WHITE)
+add_textbox(slide, "Phase 2 – Plattformwechsel & Architekturentscheid",
+            1, 1.05, 11, 0.45, font_size=15, color=YELLOW)
+
+# Zapier column
+add_rect(slide, 1, 1.65, 5.3, 5.0, RGBColor(0x3A, 0x1A, 0x10))
+add_textbox(slide, "Zapier – Limitierungen", 1.2, 1.75, 4.9, 0.45,
+            font_size=16, bold=True, color=RGBColor(0xFF, 0x7A, 0x5A))
+add_multiline(slide, [
+    "✗  JSON-Arrays nicht nativ unterstützt",
+    "✗  Flat Fields nötig (produkt_1...5)",
+    "✗  Formatter für Textformatierung unzureichend",
+    "✗  HitL: Decision-Feld 'approved'/'rejected'",
+    "   oft falsch konfiguriert",
+    "✗  Hohe Kosten pro Task/Run",
+    "✗  Keine Code-Nodes (kein Python/JS)",
+    "✗  Begrenzte Debugging-Möglichkeiten",
+], 1.2, 2.3, 4.9, 4.0, font_size=13, color=RGBColor(0xFF, 0xCC, 0xBB))
+
+# Arrow
+add_textbox(slide, "→", 6.2, 3.7, 0.8, 0.8,
+            font_size=36, bold=True, color=ACCENT, align=PP_ALIGN.CENTER)
+
+# n8n column
+add_rect(slide, 7.05, 1.65, 5.3, 5.0, RGBColor(0x0D, 0x3B, 0x2A))
+add_textbox(slide, "n8n – Vorteile", 7.25, 1.75, 4.9, 0.45,
+            font_size=16, bold=True, color=RGBColor(0x52, 0xB7, 0x88))
+add_multiline(slide, [
+    "✓  JSON-Arrays nativ – kein Flat-Field-Hack",
+    "✓  Code-Node (JS/Python) für jede Logik",
+    "✓  Wait-Node: echter HitL mit Webhook",
+    "✓  Google Docs für formatierte Offerten",
+    "✓  Self-hosted oder Cloud – günstig",
+    "✓  Vollständiges Error-Handling möglich",
+    "✓  Sauberes Debugging & Execution-Log",
+    "✓  Kein Task-Limit",
+], 7.25, 2.3, 4.9, 4.0, font_size=13, color=RGBColor(0xA8, 0xD8, 0xBE))
+
+# ══════════════════════════════════════════════════════════════════
+# SLIDE 12 – MULTI-CHANNEL ARCHITEKTUR
+# ══════════════════════════════════════════════════════════════════
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+set_bg(slide, DARK_BLUE)
+add_rect(slide, 0, 0, 0.45, 7.5, ACCENT)
+
+add_textbox(slide, "Multi-Channel Eingangsarchitektur", 1, 0.35, 11, 0.7,
+            font_size=30, bold=True, color=WHITE)
+add_textbox(slide, "6 Kanäle – ein normalisierter Datenstrom – eine KI-Analyse",
+            1, 1.05, 11, 0.45, font_size=15, color=YELLOW)
+
+channels = [
+    ("📧", "Gmail",          "E-Mail & Thread\nabrufen",           RGBColor(0x1A, 0x3A, 0x6C)),
+    ("🌐", "Webformular",    "Online-Bestellung\nWebhook POST",    RGBColor(0x1A, 0x3A, 0x6C)),
+    ("📞", "Telefon",        "Twilio → Transkript\n(Phase 2)",     RGBColor(0x4A, 0x2A, 0x0A)),
+    ("💬", "WhatsApp",       "Business API\n+ Kontext-Store",      RGBColor(0x0D, 0x3B, 0x1A)),
+    ("📋", "Kontaktformular","n8n-Form\nstrukturiert",             RGBColor(0x1A, 0x3A, 0x6C)),
+    ("✈️", "Telegram",       "Bot-Trigger\n+ Kontext-Store",       RGBColor(0x0D, 0x2A, 0x4A)),
+]
+
+bw, bh = 1.85, 2.5
+for i, (icon, name, desc, col) in enumerate(channels):
+    x = 0.7 + i * (bw + 0.22)
+    add_rect(slide, x, 1.65, bw, bh, col)
+    add_textbox(slide, icon, x, 1.75, bw, 0.65, font_size=26, align=PP_ALIGN.CENTER)
+    add_textbox(slide, name, x+0.1, 2.45, bw-0.2, 0.45,
+                font_size=13, bold=True, color=WHITE, align=PP_ALIGN.CENTER)
+    add_textbox(slide, desc, x+0.1, 2.95, bw-0.2, 1.1,
+                font_size=11, color=RGBColor(0xB0, 0xC4, 0xDE), align=PP_ALIGN.CENTER)
+    # down arrow
+    add_textbox(slide, "↓", x + bw/2 - 0.15, 4.25, 0.4, 0.4,
+                font_size=18, color=ACCENT, align=PP_ALIGN.CENTER)
+
+# Merge node
+add_rect(slide, 3.5, 4.75, 5.8, 0.8, RGBColor(0x2B, 0x4C, 0x7E))
+add_textbox(slide, "Quellen zusammenführen  →  Normalisierter JSON-Input",
+            3.65, 4.85, 5.5, 0.55, font_size=14, bold=True, color=WHITE, align=PP_ALIGN.CENTER)
+
+add_textbox(slide, "↓", 6.2, 5.65, 0.5, 0.4, font_size=18, color=ACCENT, align=PP_ALIGN.CENTER)
+
+# Analysis node
+add_rect(slide, 3.5, 6.1, 5.8, 0.85, RGBColor(0x1A, 0x53, 0x3A))
+add_textbox(slide, "Vollständigkeitsprüfung (Claude AI)  →  Auftrag vollständig?",
+            3.65, 6.2, 5.5, 0.55, font_size=14, bold=True, color=RGBColor(0x90, 0xE0, 0xB8), align=PP_ALIGN.CENTER)
+
+# ══════════════════════════════════════════════════════════════════
+# SLIDE 13 – N8N WORKFLOW ARCHITEKTUR
+# ══════════════════════════════════════════════════════════════════
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+set_bg(slide, DARK_BLUE)
+add_rect(slide, 0, 0, 0.45, 7.5, ACCENT)
+
+add_textbox(slide, "n8n Workflow – Vollständige Architektur", 1, 0.35, 11, 0.7,
+            font_size=30, bold=True, color=WHITE)
+
+# Complete path
+add_rect(slide, 1, 1.2, 11.1, 0.4, RGBColor(0x1A, 0x53, 0x3A))
+add_textbox(slide, "VOLLSTÄNDIG", 1.15, 1.25, 2, 0.3, font_size=11, bold=True, color=RGBColor(0x90, 0xE0, 0xB8))
+
+complete_steps = [
+    "Eingangs-\nbestätigung",
+    "Kalkulation\n(Claude AI)",
+    "Google Docs\nOfferte",
+    "Zur Freigabe\nsenden",
+    "Wait-Node\n(HitL)",
+    "Entscheidung\nprüfen (IF)",
+    "Genehmigt\n→ Versand",
+]
+cw = 1.4
+for i, s in enumerate(complete_steps):
+    x = 1 + i * (cw + 0.15)
+    add_rect(slide, x, 1.7, cw, 1.5, RGBColor(0x0D, 0x3B, 0x2A))
+    add_textbox(slide, s, x+0.05, 1.8, cw-0.1, 1.2, font_size=10, color=WHITE, align=PP_ALIGN.CENTER)
+    if i < len(complete_steps) - 1:
+        add_textbox(slide, "→", x+cw, 2.25, 0.18, 0.4, font_size=12, color=ACCENT, align=PP_ALIGN.CENTER)
+
+# Incomplete path
+add_rect(slide, 1, 3.4, 11.1, 0.4, RGBColor(0x6B, 0x35, 0x10))
+add_textbox(slide, "UNVOLLSTÄNDIG", 1.15, 3.45, 2.5, 0.3, font_size=11, bold=True, color=YELLOW)
+
+incomplete_steps = [
+    "Nachfrage-\nEmail generieren",
+    "Auftragskontext\nspeichern",
+    "Nachfrage\nsenden",
+    "Kunde antwortet\n(loop back)",
+]
+for i, s in enumerate(incomplete_steps):
+    x = 1 + i * (cw + 0.5)
+    add_rect(slide, x, 3.9, cw+0.3, 1.5, RGBColor(0x4A, 0x22, 0x08))
+    add_textbox(slide, s, x+0.05, 4.0, cw+0.2, 1.2, font_size=10, color=YELLOW, align=PP_ALIGN.CENTER)
+    if i < len(incomplete_steps) - 1:
+        add_textbox(slide, "→", x+cw+0.3, 4.45, 0.55, 0.4, font_size=12, color=ACCENT, align=PP_ALIGN.CENTER)
+
+# Error path
+add_rect(slide, 1, 5.6, 11.1, 0.4, RGBColor(0x5C, 0x1A, 0x1A))
+add_textbox(slide, "FEHLER", 1.15, 5.65, 1.5, 0.3, font_size=11, bold=True, color=RGBColor(0xFF, 0x9A, 0x9A))
+
+error_steps = [
+    "Error-Trigger\n(global)",
+    "Fehler\nklassifizieren",
+    "Benachrichtigung\nan Edgar",
+    "Execution-Log\nspeichern",
+]
+for i, s in enumerate(error_steps):
+    x = 1 + i * (cw + 0.5)
+    add_rect(slide, x, 6.1, cw+0.3, 1.1, RGBColor(0x40, 0x10, 0x10))
+    add_textbox(slide, s, x+0.05, 6.18, cw+0.2, 0.9, font_size=10, color=RGBColor(0xFF, 0xCC, 0xCC), align=PP_ALIGN.CENTER)
+    if i < len(error_steps) - 1:
+        add_textbox(slide, "→", x+cw+0.3, 6.5, 0.55, 0.4, font_size=12, color=ACCENT, align=PP_ALIGN.CENTER)
+
+# ══════════════════════════════════════════════════════════════════
+# SLIDE 14 – N8N HUMAN IN THE LOOP
+# ══════════════════════════════════════════════════════════════════
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+set_bg(slide, DARK_BLUE)
+add_rect(slide, 0, 0, 0.45, 7.5, ACCENT)
+
+add_textbox(slide, "Human in the Loop – n8n Wait-Node", 1, 0.35, 11, 0.7,
+            font_size=30, bold=True, color=WHITE)
+add_textbox(slide, "Workflow pausiert – Edgar entscheidet – Webhook setzt fort",
+            1, 1.05, 11, 0.45, font_size=15, color=YELLOW)
+
+# Flow boxes
+hitl_steps = [
+    ("1", "Offerte\nfertig", "Google Docs\ngeneriert", RGBColor(0x1A, 0x3A, 0x6C)),
+    ("2", "E-Mail\nan Edgar", "Offerte-Link +\nApprove/Reject", RGBColor(0x2B, 0x4C, 0x7E)),
+    ("3", "Wait-Node\npausiert", "Wartet auf\nWebhook-Klick", RGBColor(0x5C, 0x20, 0x6A)),
+    ("4", "Edgar\nklickt Link", "?approved=true\noder false", RGBColor(0x1A, 0x53, 0x3A)),
+    ("5", "IF-Node\nentscheidet", "true → Versand\nfalse → Absage", RGBColor(0x1A, 0x53, 0x3A)),
+]
+bw2 = 2.1
+for i, (num, title, desc, col) in enumerate(hitl_steps):
+    x = 0.9 + i * (bw2 + 0.22)
+    add_rect(slide, x, 1.65, bw2, 3.0, col)
+    add_textbox(slide, num, x+0.1, 1.75, 0.5, 0.45, font_size=18, bold=True, color=ACCENT)
+    add_textbox(slide, title, x+0.1, 2.25, bw2-0.2, 0.7,
+                font_size=14, bold=True, color=WHITE)
+    add_textbox(slide, desc, x+0.1, 3.0, bw2-0.2, 1.4,
+                font_size=12, color=RGBColor(0xB0, 0xC4, 0xDE))
+    if i < len(hitl_steps) - 1:
+        add_textbox(slide, "→", x+bw2, 2.85, 0.25, 0.5,
+                    font_size=18, bold=True, color=ACCENT, align=PP_ALIGN.CENTER)
+
+# URL example
+add_rect(slide, 1, 4.85, 11.1, 1.2, RGBColor(0x0D, 0x1F, 0x33))
+add_textbox(slide, "Approve-Link:", 1.2, 4.95, 2, 0.35, font_size=12, bold=True, color=ACCENT)
+add_textbox(slide, "{{ $execution.resumeUrl }}?approved=true",
+            3.3, 4.95, 8.5, 0.35, font_size=12, color=RGBColor(0x90, 0xE0, 0xB8))
+add_textbox(slide, "Reject-Link:", 1.2, 5.45, 2, 0.35, font_size=12, bold=True, color=RGBColor(0xFF, 0x7A, 0x5A))
+add_textbox(slide, "{{ $execution.resumeUrl }}?approved=false",
+            3.3, 5.45, 8.5, 0.35, font_size=12, color=RGBColor(0xFF, 0xBB, 0xAA))
+
+# Timeout note
+add_rect(slide, 1, 6.2, 11.1, 1.0, RGBColor(0x1A, 0x2A, 0x45))
+add_textbox(slide, "⏰  Timeout-Logik:", 1.2, 6.3, 2.5, 0.35, font_size=12, bold=True, color=YELLOW)
+add_textbox(slide, "72h kein Klick → Reminder-Mail an Edgar  →  48h  →  Auftrag automatisch archiviert",
+            3.8, 6.3, 8, 0.35, font_size=12, color=RGBColor(0xF4, 0xA2, 0x61))
+add_textbox(slide, "Execution-ID in URL = Sicherheitstoken – kein unauthorized Trigger möglich",
+            1.2, 6.72, 10.7, 0.35, font_size=11, italic=True, color=GREY_TEXT)
+
+# ══════════════════════════════════════════════════════════════════
+# SLIDE 15 – FEHLERBEHANDLUNG
+# ══════════════════════════════════════════════════════════════════
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+set_bg(slide, DARK_BLUE)
+add_rect(slide, 0, 0, 0.45, 7.5, ACCENT)
+
+add_textbox(slide, "Fehlerbehandlung & Robustheit", 1, 0.35, 11, 0.7,
+            font_size=30, bold=True, color=WHITE)
+add_textbox(slide, "3-Ebenen-Konzept für produktionssicheren Betrieb",
+            1, 1.05, 11, 0.45, font_size=15, color=YELLOW)
+
+levels = [
+    (
+        "Ebene 1 – Node-Level",
+        RGBColor(0x1A, 0x3A, 0x6C),
+        [
+            "Continue on Fail = ON bei allen kritischen Nodes",
+            "AI-Steps: JSON-Validierung nach jedem Output",
+            "Gmail/Google Docs: Retry bis 3× bei Fehler",
+            "IF-Node: {{ $json.auftrag_nr }} vorhanden?",
+        ]
+    ),
+    (
+        "Ebene 2 – Wait-Node Timeout",
+        RGBColor(0x3A, 0x1A, 0x6C),
+        [
+            "Maximale Wartezeit: 72 Stunden",
+            "Nach Ablauf: Reminder-Mail an Edgar",
+            "Nach 48h ohne Reaktion: Auto-Archivierung",
+            "Kunde erhält Status-Update",
+        ]
+    ),
+    (
+        "Ebene 3 – Globaler Error-Workflow",
+        RGBColor(0x5C, 0x1A, 0x1A),
+        [
+            "Separater Error-Workflow (n8n Settings)",
+            "Fängt ALLE unbehandelten Fehler aller Workflows",
+            "Mail an Edgar: Workflow + Node + Fehlermeldung",
+            "Link zur Execution für direktes Debugging",
+        ]
+    ),
+]
+
+for i, (title, col, items) in enumerate(levels):
+    x = 1 + i * 3.85
+    add_rect(slide, x, 1.65, 3.6, 5.1, col)
+    add_textbox(slide, title, x+0.15, 1.75, 3.3, 0.5,
+                font_size=13, bold=True, color=WHITE)
+    for j, item in enumerate(items):
+        add_textbox(slide, f"→  {item}", x+0.15, 2.4 + j*0.85, 3.3, 0.75,
+                    font_size=11, color=RGBColor(0xCC, 0xDD, 0xFF))
+
+# Critical failure points
+add_rect(slide, 1, 7.0, 11.1, 0.35, RGBColor(0x0D, 0x1F, 0x33))
+add_textbox(slide, "Kritische Punkte: Anthropic Timeout · Gmail Auth · Google Docs API-Limit · Ungültiger JSON-Output der AI",
+            1.2, 7.05, 10.7, 0.25, font_size=11, color=GREY_TEXT, align=PP_ALIGN.CENTER)
+
+# ══════════════════════════════════════════════════════════════════
+# SLIDE 16 – AKTUELLER STAND & ROADMAP
+# ══════════════════════════════════════════════════════════════════
+slide = prs.slides.add_slide(prs.slide_layouts[6])
+set_bg(slide, DARK_BLUE)
+add_rect(slide, 0, 0, 0.45, 7.5, ACCENT)
+
+add_textbox(slide, "Aktueller Stand & Roadmap", 1, 0.35, 11, 0.7,
+            font_size=30, bold=True, color=WHITE)
+add_textbox(slide, "Juni 2026 – Phase 2 (n8n) in Entwicklung",
+            1, 1.05, 11, 0.45, font_size=15, color=YELLOW)
+
+# Done column
+add_rect(slide, 1, 1.65, 5.3, 5.5, RGBColor(0x12, 0x22, 0x38))
+add_textbox(slide, "Implementiert", 1.2, 1.75, 4.9, 0.45,
+            font_size=16, bold=True, color=RGBColor(0x52, 0xB7, 0x88))
+done_items = [
+    "✅  6 Eingangskanäle (Mail, Web, WA, TG, Tel, Form)",
+    "✅  Vollständigkeitsprüfung mit Schema",
+    "✅  Preiskalkulation (deterministisch)",
+    "✅  Offerte via Google Docs",
+    "✅  HitL mit Wait-Node + Webhook-Links",
+    "✅  Auftragskontext-Speicher (Loop-Handling)",
+    "✅  Abschlussmail & Interne Benachrichtigung",
+    "✅  Ablehungs-Pfad konzeptioniert",
+]
+for i, item in enumerate(done_items):
+    add_textbox(slide, item, 1.2, 2.3 + i*0.58, 4.9, 0.5,
+                font_size=12, color=RGBColor(0xA8, 0xD8, 0xBE))
+
+# Roadmap column
+add_rect(slide, 6.85, 1.65, 5.3, 5.5, RGBColor(0x12, 0x22, 0x38))
+add_textbox(slide, "Roadmap", 7.05, 1.75, 4.9, 0.45,
+            font_size=16, bold=True, color=ACCENT)
+roadmap = [
+    ("⚡ Kurzfristig",  RGBColor(0xFF, 0xCC, 0x00), [
+        "Fehlerbehandlung (Error-Workflow)",
+        "Druckdaten-Anhänge (Drive)",
+        "End-to-End-Test Gmail + Webhook",
+    ]),
+    ("📅 Mittelfristig", RGBColor(0xF4, 0xA2, 0x61), [
+        "Rechnung / CH-Quittung generieren",
+        "Auftragsdatenbank (Sheets/Supabase)",
+        "Twilio/WhatsApp Credentials",
+    ]),
+    ("🚀 Langfristig",  RGBColor(0x90, 0xE0, 0xB8), [
+        "Telefontranskription (Deepgram)",
+        "Kundenstatus-Portal",
+        "Produktivbetrieb Schellenberg AG",
+    ]),
+]
+y_off = 2.3
+for emoji_title, col, items in roadmap:
+    add_textbox(slide, emoji_title, 7.05, y_off, 4.9, 0.38,
+                font_size=12, bold=True, color=col)
+    y_off += 0.42
+    for item in items:
+        add_textbox(slide, f"  →  {item}", 7.05, y_off, 4.9, 0.38,
+                    font_size=11, color=RGBColor(0xB0, 0xC4, 0xDE))
+        y_off += 0.38
+    y_off += 0.15
+
+# Footer
+add_rect(slide, 1, 7.1, 11.1, 0.2, ACCENT)
+add_textbox(slide, "Schellenberg Druck AG · Schützenhausstrasse 5 · 8330 Pfäffikon · schellenbergdruck.ch",
+            1, 7.1, 11.1, 0.35, font_size=10, color=GREY_TEXT, align=PP_ALIGN.CENTER)
+
 # ── Save ───────────────────────────────────────────────────────
 out = "/home/user/zapier-json-schema/KI_Auftragsannahme_Schellenberg.pptx"
 prs.save(out)
