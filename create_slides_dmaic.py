@@ -646,7 +646,7 @@ add_textbox(slide, "Schellenberg Druck AG · Schützenhausstrasse 5 · 8330 Pfä
             0.5, 7.28, 12.5, 0.2, font_size=10, color=MID, align=PP_ALIGN.CENTER)
 
 # ══════════════════════════════════════════════════════════════════
-# SLIDE 12 – SCREENSHOT: ZAPIER WORKFLOW (Phase 1)
+# SLIDE 12 – SCREENSHOT: ZAPIER WORKFLOW (Phase 1) – SPLIT L/R
 # ══════════════════════════════════════════════════════════════════
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 set_bg(slide)
@@ -654,33 +654,57 @@ add_rect(slide, 0, 0, 13.33, 0.08, ORANGE)
 
 add_textbox(slide, "Workflow Evolution – Phase 1: Zapier", 0.6, 0.2, 12, 0.65,
             font_size=28, bold=True, color=DARK)
-add_textbox(slide, "Erster funktionsfähiger Workflow | Gmail → AI → Kalkulation → HitL → Versand",
+add_textbox(slide, "Erster Workflow | Gmail → AI Analyse → Kalkulation → Offerte → HitL → Versand",
             0.6, 0.88, 12, 0.38, font_size=13, color=MID)
 
-# Screenshot placeholder – Zapier workflow
-add_rect(slide, 0.5, 1.4, 12.3, 4.95, LIGHT_BOX,
+# LEFT half placeholder
+add_rect(slide, 0.3, 1.38, 6.2, 4.3, LIGHT_BOX,
          line_color=RGBColor(0xCB, 0xD5, 0xE0))
-add_textbox(slide, "📸  Screenshot einfügen:", 4.5, 2.5, 4.5, 0.5,
-            font_size=14, color=MID, align=PP_ALIGN.CENTER)
-add_textbox(slide, "Zapier Workflow Übersicht\n(erster Screenshot aus Chatverlauf)",
-            3.5, 3.1, 6.5, 0.9, font_size=13, color=RGBColor(0xA0, 0xAE, 0xC0),
+add_rect(slide, 0.3, 1.38, 6.2, 0.38, D_COL)
+add_textbox(slide, "Linke Hälfte des Screenshots",
+            0.45, 1.42, 5.9, 0.28, font_size=11, bold=True, color=WHITE)
+add_textbox(slide, "📸  Screenshot hier einfügen\n(linke Hälfte zuschneiden)",
+            1.5, 2.6, 3.2, 0.7, font_size=12, color=MID,
             align=PP_ALIGN.CENTER, italic=True)
+add_textbox(slide, "Enthält:\nStep 1: Gmail Trigger\nStep 2: AI Auftragsanalyse\nStep 3: Path (vollständig/unvollständig)",
+            0.5, 3.6, 5.8, 1.7, font_size=11, color=MID)
 
-# Caption boxes below
+# RIGHT half placeholder
+add_rect(slide, 6.85, 1.38, 6.2, 4.3, LIGHT_BOX,
+         line_color=RGBColor(0xCB, 0xD5, 0xE0))
+add_rect(slide, 6.85, 1.38, 6.2, 0.38, D_COL)
+add_textbox(slide, "Rechte Hälfte des Screenshots",
+            7.0, 1.42, 5.9, 0.28, font_size=11, bold=True, color=WHITE)
+add_textbox(slide, "📸  Screenshot hier einfügen\n(rechte Hälfte zuschneiden)",
+            8.05, 2.6, 3.2, 0.7, font_size=12, color=MID,
+            align=PP_ALIGN.CENTER, italic=True)
+add_textbox(slide, "Enthält:\nStep 6: Kalkulation AI\nStep 7: Offerte AI\nStep 9: Human in the Loop\nStep 16: Rückfrage-E-Mail",
+            7.05, 3.6, 5.8, 1.7, font_size=11, color=MID)
+
+# Divider label
+add_textbox(slide, "◀ Links", 0.5, 5.8, 2.5, 0.35,
+            font_size=11, color=D_COL, bold=True)
+add_textbox(slide, "Rechts ▶", 10.5, 5.8, 2.5, 0.35,
+            font_size=11, color=D_COL, bold=True, align=PP_ALIGN.RIGHT)
+add_textbox(slide,
+    "Tipp: Screenshot in Bildbearbeitungsprogramm vertikal halbieren → je eine Hälfte in die Platzhalter ziehen",
+    0.5, 5.85, 12.3, 0.35, font_size=10, italic=True, color=MID, align=PP_ALIGN.CENTER)
+
+# Mini step captions
 captions_z = [
-    ("Step 1–2", "Gmail Trigger\n+ AI Analyse"),
-    ("Step 3",   "Path: vollständig\nvs. unvollständig"),
-    ("Step 6–7", "Kalkulation\n+ Offerte AI"),
-    ("Step 9",   "Human in\nthe Loop"),
-    ("Step 16",  "Rückfrage\nE-Mail"),
+    ("Step 1–2", "Trigger + AI"),
+    ("Step 3",   "Path"),
+    ("Step 6–7", "Kalk. + Offerte"),
+    ("Step 9",   "HitL"),
+    ("Step 16",  "Rückfrage"),
 ]
 bwc = 2.2
 for i, (step, desc) in enumerate(captions_z):
     x = 0.5 + i * (bwc + 0.17)
-    add_rect(slide, x, 6.5, bwc, 0.8, PHASE_BG["D"], line_color=D_COL)
-    add_textbox(slide, step, x+0.1, 6.55, bwc-0.2, 0.3,
+    add_rect(slide, x, 6.3, bwc, 0.75, PHASE_BG["D"], line_color=D_COL)
+    add_textbox(slide, step, x+0.1, 6.35, bwc-0.2, 0.28,
                 font_size=10, bold=True, color=D_COL)
-    add_textbox(slide, desc, x+0.1, 6.85, bwc-0.2, 0.35,
+    add_textbox(slide, desc, x+0.1, 6.65, bwc-0.2, 0.32,
                 font_size=10, color=MID)
 
 # ══════════════════════════════════════════════════════════════════
